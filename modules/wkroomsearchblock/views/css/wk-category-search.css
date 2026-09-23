@@ -15,13 +15,16 @@
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.35);
-  padding: 22px 24px;
+  box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.25);
+  padding: 22px 20px;
   margin-bottom: 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .header-rmsearch-wrapper .filter_header {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.01em;
@@ -30,7 +33,7 @@
 
 .header-rmsearch-wrapper .filter_header p {
   margin: 0 0 6px 0;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: #ffffff;
 }
@@ -46,13 +49,109 @@
   clear: both;
 }
 
+/* Enforce vertical stacked layout for category sidebar */
 .header-rmsearch-wrapper #search_hotel_block_form {
   margin-top: 14px;
+  width: 100%;
+}
+
+.header-rmsearch-wrapper #search_hotel_block_form .grid,
+.header-rmsearch-wrapper #search_hotel_block_form #search_form_fields_wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.header-rmsearch-wrapper #search_hotel_block_form .grid .grid-item,
+.header-rmsearch-wrapper #search_hotel_block_form .grid > div {
+  display: block !important;
+  width: 100% !important;
+  grid-column: unset !important;
+  grid-column-start: unset !important;
+  grid-column-end: unset !important;
+  margin-bottom: 0 !important;
+}
+
+.header-rmsearch-wrapper #search_hotel_block_form .header-rmsearch-input {
+  width: 100% !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  font-size: 13.5px !important;
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
+  border: 1.5px solid #334155 !important;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.header-rmsearch-wrapper #search_hotel_block_form .input-date {
+  padding-left: 42px !important;
+  background: #ffffff url("../img/icon-calendar.svg") no-repeat 14px 50% !important;
+  background-size: 18px 18px !important;
+  cursor: pointer !important;
+}
+
+.header-rmsearch-wrapper #search_hotel_block_form .input-occupancy {
+  padding-left: 42px !important;
+  background: #ffffff url("../img/icon-users.svg") no-repeat 14px 50% !important;
+  background-size: 18px 18px !important;
+  cursor: pointer !important;
+  text-align: left !important;
+}
+
+.header-rmsearch-wrapper #search_hotel_block_form .input-occupancy span {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.header-rmsearch-wrapper #search_hotel_block_form #daterange_value.multi-date {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  grid-template-columns: 1fr !important;
+}
+
+.header-rmsearch-wrapper #search_hotel_block_form #daterange_value.multi-date .form-group {
+  margin-bottom: 0 !important;
+  width: 100% !important;
+}
+
+.header-rmsearch-wrapper #search_hotel_block_form #search_room_submit {
+  width: 100% !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, #1292ff 0%, #0066cc 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(18, 146, 255, 0.4) !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.header-rmsearch-wrapper #search_hotel_block_form #search_room_submit:hover,
+.header-rmsearch-wrapper #search_hotel_block_form #search_room_submit:focus {
+  background: linear-gradient(135deg, #0077e6 0%, #004c99 100%) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(18, 146, 255, 0.5) !important;
 }
 
 @media (max-width: 767px) {
   .header-rmsearch-wrapper {
-    padding: 18px 14px;
+    padding: 18px 16px;
     border-radius: 16px;
   }
 }
