@@ -98,15 +98,28 @@
         }
 
         function setPosition(dateRangePickerInput, calendarDom, positionClass) {
-            const inputElementHeight = dateRangePickerInput.outerHeight();
+            const isMobile = window.innerWidth <= 767;
+            if (isMobile) {
+                $(calendarDom).css({
+                    position: 'fixed',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    bottom: 'auto',
+                    right: 'auto',
+                    zIndex: 999999
+                });
+                return;
+            }
 
+            const inputElementHeight = dateRangePickerInput.outerHeight();
             const css = {};
             if (positionClass == 'top') {
                 css.top = 'unset';
-                css.bottom = inputElementHeight;
+                css.bottom = inputElementHeight + 8;
             } else {
                 css.bottom = 'unset';
-                css.top = $(dateRangePickerInput).position().top + inputElementHeight;
+                css.top = $(dateRangePickerInput).position().top + inputElementHeight + 8;
             }
 
             $(calendarDom).css(css);
