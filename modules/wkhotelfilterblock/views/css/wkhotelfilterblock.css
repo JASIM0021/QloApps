@@ -20,79 +20,170 @@
 * @license https://opensource.org/license/osl-3-0-php Open Software License version 3.0
 */
 
-.layered_filter_cont
-{
-	background-color: #fff;
-    border: 1px solid #e6e6e6;
+.layered_filter_cont {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
     margin-top: 20px;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
 }
 
-.layered_filter_cont div.layered_filter_heading
-{
-	padding: 10px;
+.layered_filter_cont:hover {
+    box-shadow: 0 8px 26px -4px rgba(15, 23, 42, 0.08);
 }
-.layered_filter_cont div.layered_filter_heading div.lf_headingmain_wrapper span
-{
-	color: #333;
-    font-size: 16px;
-    font-weight: 400;
+
+.layered_filter_cont div.layered_filter_heading {
+    padding: 16px 18px;
+    background: #f8fafc;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.layered_filter_cont div.layered_filter_heading div.lf_headingmain_wrapper span {
+    color: #0f172a;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
     display: block;
 }
 
-.layered_filter_cont div.layered_filter_heading span.clear_filter
-{
-	cursor: pointer;
-	color: #a9a9a9 !important;
+.layered_filter_cont div.layered_filter_heading span.clear_filter {
+    cursor: pointer;
+    color: #1292ff !important;
     font-size: 12px !important;
-    font-weight: normal !important;
-    text-decoration: underline;
+    font-weight: 600 !important;
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: rgba(18, 146, 255, 0.08);
+    transition: all 0.2s ease;
 }
 
-.lf_sub_cont
-{
-	padding: 10px;
-	max-height: 200px;
+.layered_filter_cont div.layered_filter_heading span.clear_filter:hover {
+    background: rgba(18, 146, 255, 0.18);
+    color: #0066cc !important;
+    text-decoration: none;
+}
+
+.lf_sub_cont {
+    padding: 14px 18px 18px;
+    max-height: 240px;
     overflow-y: auto;
-    padding: 0 10px 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
 }
 
-.layered_filt
-{
-	margin-bottom: 5px;
+.lf_sub_cont::-webkit-scrollbar {
+    width: 5px;
 }
 
-.filters_name, .price_filter_subcont span
-{
-	font-size: 16px;
-	color: #555555;
-	font-weight: 400;
+.lf_sub_cont::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
 }
 
-.layered_filt div.checker
-{
-	display: inline-block;
+.layered_filt {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    transition: background-color 0.15s ease;
+    cursor: pointer;
 }
 
-#filter_price_silder
-{
-	margin-top: 15px;
+.layered_filt:hover {
+    background-color: #f1f5f9;
 }
 
-#filter_price_silder .ui-slider-range
-{
-	background-color: #379BF0;
-    background-image: none;
+.layered_filt label {
+    margin-bottom: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
 }
 
-#filter_price_silder .ui-slider-handle
-{
-	background-color: #FFFFFF;
-    background-image: none;
-    border-color: #bebbbb;
-    border-radius: 50%;
-    outline: none;
+.filters_name, .price_filter_subcont span {
+    font-size: 13.5px;
+    color: #334155;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.layered_filt div.checker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+}
+
+.layered_filt input[type="checkbox"] {
+    accent-color: #1292ff;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#filter_price_silder {
+    margin-top: 18px;
+    margin-bottom: 12px;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 9999px;
+    position: relative;
+    border: none;
+}
+
+#filter_price_silder .ui-slider-range {
+    background: linear-gradient(90deg, #1292ff 0%, #38bdf8 100%) !important;
+    border-radius: 9999px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#filter_price_silder .ui-slider-handle {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 2.5px solid #1292ff !important;
+    border-radius: 50% !important;
+    width: 18px !important;
+    height: 18px !important;
+    top: -6px !important;
+    margin-left: -9px !important;
+    outline: none !important;
+    cursor: grab;
+    box-shadow: 0 2px 8px rgba(18, 146, 255, 0.35) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#filter_price_silder .ui-slider-handle:hover,
+#filter_price_silder .ui-slider-handle:active {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(18, 146, 255, 0.55) !important;
 }
 
 #filter_price_silder.ui-widget-content {
-	border: none;
+    border: none;
+}
+
+.price_filter_subcont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4px;
+}
+
+.price_filter_subcont span {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #0f172a;
 }
