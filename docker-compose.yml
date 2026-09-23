@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  qloapps:
+    container_name: qloapps
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "9090:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - MYSQL_DATABASE=qloapps
+    depends_on:
+      - qloapps_db
+
+  qloapps_db:
+    container_name: qloapps_db
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_DATABASE=qloapps
+      - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
+    volumes:
+      - qloapps_db_data:/var/lib/mysql
+
+volumes:
+  qloapps_db_data:

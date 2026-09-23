@@ -5,24 +5,17 @@
 * that is bundled with this package in the file LICENSE.md
 * It is also available through the world-wide-web at this URL:
 * https://opensource.org/license/osl-3-0-php
-* If you did not receive a copy of the license and are unable to
-* obtain it through the world-wide-web, please send an email
-* to support@qloapps.com so we can send you a copy immediately.
 *
-* DISCLAIMER
-*
-* Do not edit or add to this file if you wish to upgrade this module to a newer
-* versions in the future. If you wish to customize this module for your needs
-* please refer to https://store.webkul.com/customisation-guidelines for more information.
-*
-* @author Webkul IN
-* @copyright Since 2010 Webkul
+* @author Webkul IN / TodayInTech
+* @copyright Since 2010 Webkul / TodayInTech
 * @license https://opensource.org/license/osl-3-0-php Open Software License version 3.0
 */
 
 #search_hotel_block_form .grid {
   display: grid;
-  column-gap: 5px;
+  column-gap: 12px;
+  row-gap: 12px;
+  align-items: center;
 }
 #search_hotel_block_form .grid .grid-item {
   display: grid;
@@ -49,7 +42,7 @@
   --col-span: 7;
 }
 #daterange_value.multi-date {
-  column-gap: 5px;
+  column-gap: 8px;
   grid-template-columns: repeat(2, 1fr);
 }
 .fancybox-wrap #search_hotel_block_form .form-group.xs-calendar {
@@ -57,240 +50,390 @@
 }
 @media (max-width: 767px) {
   #search_hotel_block_form .grid {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
   #search_hotel_block_form .grid .grid-item {
     display: block;
+    width: 100%;
+    margin-bottom: 0;
   }
 }
+
+/* Modernized Input Elements */
 #search_hotel_block_form .header-rmsearch-input {
-  border-radius: 4px;
-  border: none;
-  color: #333;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  color: #1e293b;
   font-size: 14px;
+  font-weight: 500;
+  background-color: #ffffff;
+  height: 56px;
+  min-height: 56px;
+  padding: 10px 16px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+#search_hotel_block_form .header-rmsearch-input:hover {
+  border-color: #cbd5e1;
+}
+
+#search_hotel_block_form .header-rmsearch-input:active, 
+#search_hotel_block_form .header-rmsearch-input:focus {
+  border-color: #1292ff;
+  box-shadow: 0 0 0 3.5px rgba(18, 146, 255, 0.16);
+  outline: none;
+}
+
+#search_hotel_block_form #id_hotel_button {
+  appearance: none;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 25px;
+  background: url("../../views/img/icon-hotel.svg") no-repeat 14px 50%, url("../../views/img/icon-dropdown-arrow.svg") no-repeat calc(100% - 14px) 50%;
+  background-size: 18px 18px, 12px 12px;
+  background-color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#search_hotel_block_form .input-date {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+}
+
+#search_hotel_block_form .input-date.focused {
+  border-color: #1292ff;
+  box-shadow: 0 0 0 3.5px rgba(18, 146, 255, 0.16);
+}
+
+#search_hotel_block_form .input-date span {
+  display: inline-flex;
+  align-items: center;
+  color: #1e293b;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+#search_hotel_block_form .input-date span i {
+  color: #94a3b8;
+  margin: 0 6px;
+}
+
+#search_hotel_block_form .input-occupancy {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 16px;
+  padding-right: 16px;
+  background: #ffffff url("../../views/img/icon-dropdown-arrow.svg") no-repeat calc(100% - 14px) 50%;
+  background-size: 12px 12px;
+}
+
+#search_hotel_block_form .input-occupancy span {
+  color: #1e293b;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.header-rmsearch-input::-webkit-input-placeholder {
+  color: #64748b;
   font-weight: 400;
-  border: 1px solid #555555;
-  background-color: #FFF;
-  height: 100%;
-  min-height: 55px;}
-  #search_hotel_block_form .header-rmsearch-input:active, #search_hotel_block_form .header-rmsearch-input:focus {
-    border: 2px solid #1292FF;}
-  #search_hotel_block_form #id_hotel_button {
-    appearance: none;
-    width: 100%;
-    padding-left: 35px;
-    padding-right: 20px;
-    background: url("../../views/img/icon-hotel.svg") no-repeat 10px 50%, url("../../views/img/icon-dropdown-arrow.svg") no-repeat calc(100% - 10px) 50%;
-    background-color: #FFF;}
-  #id_hotel_button{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  #search_hotel_block_form .input-date {
-    display: grid;
-    cursor: text;}
-  #search_hotel_block_form .input-date.focused {
-    border: 2px solid #1292FF; }
-  #search_hotel_block_form .input-date span {
-    align-self: center;}
-    #search_hotel_block_form .input-date span i {
-      transform: scale(0.8, 0.6);}
-  .header-rmsearch-input::-webkit-input-placeholder {
-    color: #333;}
-  .header-rmsearch-input:-moz-placeholder {
-    /* Firefox 18- */
-    color: #333;
-    font-weight: 400;
-    opacity: 1;}
-  .header-rmsearch-input::-moz-placeholder {
-    /* Firefox 19+ */
-    color: #333;
-    font-weight: 400;
-    opacity: 1;}
-  .header-rmsearch-input:-ms-input-placeholder {
-    color: #333;
-    font-weight: 400;}
-  .search_block_container .dropdown-toggle {
-    background-color: #f2f2f2;
-    width: 100%;
-    border-color: #d6d4d4;
-    color: #000;
-    padding: 0px !important;
-    height: 40px;}
+}
+.header-rmsearch-input:-moz-placeholder {
+  color: #64748b;
+  font-weight: 400;
+  opacity: 1;
+}
+.header-rmsearch-input::-moz-placeholder {
+  color: #64748b;
+  font-weight: 400;
+  opacity: 1;
+}
+.header-rmsearch-input:-ms-input-placeholder {
+  color: #64748b;
+  font-weight: 400;
+}
 
 .header-rmsearch-wrapper .dropdown {
-  position: relative;}
+  position: relative;
+}
 .header-rmsearch-wrapper .dropdown-menu {
-  margin: 0px;}
+  margin: 0px;
+}
 .header-rmsearch-wrapper .location_search_results_ul {
   position: absolute;
   font-size: 14px;
   z-index: 100;
   font-weight: 400;
-  padding: 0px;
+  padding: 6px 0;
   width: 100%;
-  box-shadow: 0 8px 25px -4px rgba(0,0,0,0.39);
-  max-height: 145px;
-  overflow-y: auto;}
-  .header-rmsearch-wrapper .location_search_results_ul li {
-    background-color: #fff;
-    color: #333333;
-    cursor: pointer;
-    text-align: left;
-    font-size: 14px;
-    list-style: outside none none;
-    padding: 15px;}
-    .header-rmsearch-wrapper .location_search_results_ul li:hover, .header-rmsearch-wrapper .location_search_results_ul li:focus, .header-rmsearch-wrapper .location_search_results_ul li:active {
-      background-color: #379bf0;
-      color: #FFFFFF;}
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  box-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.15);
+  max-height: 200px;
+  overflow-y: auto;
+}
+.header-rmsearch-wrapper .location_search_results_ul li {
+  background-color: #fff;
+  color: #1e293b;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  list-style: outside none none;
+  padding: 12px 16px;
+  transition: all 0.15s ease;
+}
+.header-rmsearch-wrapper .location_search_results_ul li:hover, 
+.header-rmsearch-wrapper .location_search_results_ul li:focus, 
+.header-rmsearch-wrapper .location_search_results_ul li:active {
+  background-color: #eff6ff;
+  color: #1292ff;
+  font-weight: 600;
+}
 
 .header-rmsearch-wrapper .location_search_results_ul.top {
   top: unset;
-  bottom: 55px; }
+  bottom: 60px;
+}
 .header-rmsearch-wrapper .location_search_results_ul.bottom {
-  top: 100%; }
-
+  top: 100%;
+}
 
 .header-rmsearch-wrapper .label-desc-txt {
   font-size: 12px;
-  color: #777777;
-  margin: 0;}
+  color: #64748b;
+  margin: 0;
+}
+
 .header-rmsearch-wrapper .btn {
-  font-weight: 600;}
-.header-rmsearch-wrapper .btn-primary {
-  background-color: #1292FF;
-  color: #FFF;}
-.header-rmsearch-wrapper .btn-lg {
-  padding: 19px;}
-.header-rmsearch-wrapper .wk-padding-5 {
-  padding-left: 5px;
-  padding-right: 5px;}
-  /* .header-rmsearch-wrapper {
-    background-color: #FFF;
-    border-radius: 6px;
-    padding: 20px;} */
-    .header-search-tag-line {
-      font-size: 19px;
-      color: #000000;
-      font-weight: 600;
-      text-align: center;
-      margin-top: 0px;}
-    .header-search-tag-desc {
-      font-size: 14px;
-      color: #333333;
-      line-height: 22px;
-      text-align: center;}
-      #search_hotel_block_form #search_room_submit {
-        background-color: #1292FF;
-        width: 100%;
-        font-size: 13px;
-        text-transform: uppercase;
-        border: none;
-        border-radius: 4px;
-        min-height: 55px;}
-      .submit_occupancy_btn {
-        background-color: #1292FF;
-        border: none;
-        border-radius: 4px;}
+  font-weight: 600;
+}
 
-
-/* occupancy  */
-#search_occupancy_wrapper {
+/* Modern Primary Search Button */
+#search_hotel_block_form #search_room_submit {
+  background: linear-gradient(135deg, #1292ff 0%, #0070e0 100%);
+  color: #ffffff;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   border: none;
-  max-height: 400px;
-  min-width: 280px;
+  border-radius: 12px;
+  min-height: 56px;
+  box-shadow: 0 8px 22px -4px rgba(18, 146, 255, 0.42);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#search_hotel_block_form #search_room_submit:hover {
+  background: linear-gradient(135deg, #0084f7 0%, #0060c2 100%);
+  box-shadow: 0 12px 26px -4px rgba(18, 146, 255, 0.55);
+  transform: translateY(-1.5px);
+}
+
+#search_hotel_block_form #search_room_submit:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 12px rgba(18, 146, 255, 0.35);
+}
+
+.submit_occupancy_btn {
+  background: linear-gradient(135deg, #1292ff 0%, #0070e0 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(18, 146, 255, 0.3);
+  transition: all 0.15s ease;
+}
+.submit_occupancy_btn:hover {
+  background: linear-gradient(135deg, #0084f7 0%, #0060c2 100%);
+  box-shadow: 0 6px 14px rgba(18, 146, 255, 0.4);
+}
+
+/* Occupancy Dropdown Card */
+#search_occupancy_wrapper {
+  border: 1px solid #e2e8f0;
+  max-height: 420px;
+  min-width: 300px;
   overflow: auto;
-  box-shadow: 0 8px 25px -4px rgba(0,0,0,0.39);
+  border-radius: 16px;
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.05);
   left: 0px;
-  padding: 15px 20px;}
-  #search_occupancy_wrapper.top {
-    top: unset;
-    bottom: 100%; }
-  #search_occupancy_wrapper.bottom {
-    top: 100%; }
-  #search_occupancy_wrapper .occupancy-info-separator {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    margin-right: -20px;
-      margin-left: -20px;}
-  #search_occupancy_wrapper .children_age_info_block {
-    display: none;}
-  #search_occupancy_wrapper .children_age_info_block label {
-    font-size: 12px;
-    color: #777777;}
-  #search_occupancy_wrapper label {
-    font-size: 14px;
-    color: #333333;
-    font-weight: 400;}
-    #search_occupancy_wrapper .add_new_occupancy_btn {
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 14px;
-      color: #0000FF;}
-      #search_occupancy_wrapper .occupancy_block_actions {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;}
-      #search_occupancy_wrapper .add_new_occupancy_btn:active, #search_occupancy_wrapper .add_new_occupancy_btn:focus, #search_occupancy_wrapper .add_new_occupancy_btn:hover {
-        text-decoration: none;
-        color: #0000FF;}
-    #search_occupancy_wrapper .occupancy_info_head {
-      font-size: 14px;
-      color: #333333;
-      font-weight: bold;
-      margin-bottom: 10px;}
-      #search_occupancy_wrapper .occupancy_info_head .remove-room-link {
-        font-size: 12px;
-        color: #FF4343;
-        text-align: right;}
-      #search_occupancy_wrapper .occupancy_info_block .occupancy_count {
-        padding: 14px;
-        border: 1px solid #E1E3E7;
-        font-size: 14px;
-        font-weight: 600;
-        color: #333333;
-        text-align: center;
-        border-radius: 4px;}
-      #search_occupancy_wrapper .occupancy_info_block .occupancy_count > span {
-        min-width: 21px;
-        text-align: center;
-        display: block;}
-      #search_occupancy_wrapper .occupancy_info_block .qty_direction {
-        margin-left: 3px;
-        width: 22px;}
-        #search_occupancy_wrapper .occupancy_info_block .qty_direction a {
-          padding: 1px 5px;
-          border: 0px;
-          border: 1px solid #E1E3E7;
-          color: #333;
-          border-radius: 4px;
-          font-weight: 400;}
-          #search_occupancy_wrapper .occupancy_info_block .qty_direction .occupancy_quantity_down {
-            margin-top: 3px;}
-          #search_occupancy_wrapper .occupancy-input-errors {
-            font-weight: 700;}
+  padding: 20px;
+  background-color: #ffffff;
+}
 
-  #search_occupancy_wrapper .children_ages {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    justify-content: space-between;
-  }
-  #search_occupancy_wrapper .children_ages select {
-    background-color: #fff;
-    height: 37px;
-    border-radius: 4px;
-    padding: 3px 5px;
-    font-size: 12px;
-    color: #333;
-    border: 1px solid #E1E3E7;
-    width: 100%;}
+#search_occupancy_wrapper.top {
+  top: unset;
+  bottom: 100%;
+}
+#search_occupancy_wrapper.bottom {
+  top: 100%;
+}
 
+#search_occupancy_wrapper .occupancy-info-separator {
+  margin: 16px -20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+#search_occupancy_wrapper .children_age_info_block {
+  display: none;
+}
+#search_occupancy_wrapper .children_age_info_block label {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+#search_occupancy_wrapper label {
+  font-size: 14px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+#search_occupancy_wrapper .add_new_occupancy_btn {
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 13.5px;
+  color: #1292ff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s ease;
+}
+
+#search_occupancy_wrapper .occupancy_block_actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  margin-top: 8px;
+}
+
+#search_occupancy_wrapper .add_new_occupancy_btn:active, 
+#search_occupancy_wrapper .add_new_occupancy_btn:focus, 
+#search_occupancy_wrapper .add_new_occupancy_btn:hover {
+  text-decoration: none;
+  color: #0070e0;
+}
+
+#search_occupancy_wrapper .occupancy_info_head {
+  font-size: 14px;
+  color: #0f172a;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#search_occupancy_wrapper .occupancy_info_head .remove-room-link {
+  font-size: 12px;
+  color: #ef4444;
+  font-weight: 600;
+  text-align: right;
+  text-decoration: none;
+}
+#search_occupancy_wrapper .occupancy_info_head .remove-room-link:hover {
+  text-decoration: underline;
+}
+
+#search_occupancy_wrapper .occupancy_info_block .occupancy_count {
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+#search_occupancy_wrapper .occupancy_info_block .occupancy_count > span {
+  min-width: 22px;
+  text-align: center;
+  display: block;
+}
+
+#search_occupancy_wrapper .occupancy_info_block .qty_direction {
+  margin-left: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#search_occupancy_wrapper .occupancy_info_block .qty_direction a {
+  padding: 4px 7px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #334155;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+#search_occupancy_wrapper .occupancy_info_block .qty_direction a:hover {
+  background-color: #1292ff;
+  color: #ffffff;
+  border-color: #1292ff;
+}
+
+#search_occupancy_wrapper .occupancy_info_block .qty_direction .occupancy_quantity_down {
+  margin-top: 0;
+}
+
+#search_occupancy_wrapper .occupancy-input-errors {
+  font-weight: 600;
+  font-size: 12px;
+  color: #ef4444;
+}
+
+#search_occupancy_wrapper .children_ages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+#search_occupancy_wrapper .children_ages select {
+  background-color: #ffffff;
+  height: 40px;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  color: #1e293b;
+  border: 1.5px solid #e2e8f0;
+  width: 100%;
+  font-weight: 500;
+}
 
 @media (max-width: 411px) {
   #search_occupancy_wrapper .occupancy_info_block .occupancy_count_block {
-    width: 100%;}
+    width: 100%;
+  }
   #search_occupancy_wrapper .occupancy_info_block .occupancy_count {
-      width: 80%;}
+    width: 80%;
+  }
 }

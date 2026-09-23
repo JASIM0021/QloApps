@@ -25,9 +25,9 @@
 <div id="login-panel">
 	<div id="login-header">
 		<h1 class="text-center">
-			<img id="logo" src="{$img_dir}qloapps@2x.png" width="123px" alt="QloApps" />
+			<img id="logo" src="{$img_dir}qloapps@2x.png" style="max-width: 220px; height: auto;" alt="TodayInTech Hotel" />
 		</h1>
-		<div class="text-center">{$qloapps_version}</div>
+		<div class="text-center" style="color: #64748b; font-size: 0.85rem; margin-top: 4px;">Hotel Property Management System</div>
 		<div id="error" class="hide alert alert-danger">
 		{if isset($errors)}
 			<h4>
@@ -136,19 +136,8 @@
 	{hook h="displayAdminLogin"}
 	<div id="login-footer">
 		<p class="text-center text-muted">
-			<a href="https://webkul.com" onclick="return !window.open(this.href);">
-				&copy; Webkul&#8482; 2015-{$smarty.now|date_format:"%Y"} - All rights reserved
-			</a>
-		</p>
-		<p class="text-center">
-			<a class="link-social link-twitter _blank" href="https://twitter.com/qloapps" title="Twitter">
-				<i class="icon-twitter"></i>
-			</a>
-			<a class="link-social link-facebook _blank" href="https://www.facebook.com/qloapps" title="Facebook">
-				<i class="icon-facebook"></i>
-			</a>
-			<a class="link-social link-github _blank" href="https://github.com/webkul/hotelcommerce" title="Github">
-				<i class="icon-github"></i>
+			<a href="https://todayintech.in" target="_blank" rel="noopener noreferrer">
+				&copy; TodayInTech&#8482; 2026 - All rights reserved
 			</a>
 		</p>
 	</div>

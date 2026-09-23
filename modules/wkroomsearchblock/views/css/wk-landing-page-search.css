@@ -5,76 +5,133 @@
 * that is bundled with this package in the file LICENSE.md
 * It is also available through the world-wide-web at this URL:
 * https://opensource.org/license/osl-3-0-php
-* If you did not receive a copy of the license and are unable to
-* obtain it through the world-wide-web, please send an email
-* to support@qloapps.com so we can send you a copy immediately.
 *
-* DISCLAIMER
-*
-* Do not edit or add to this file if you wish to upgrade this module to a newer
-* versions in the future. If you wish to customize this module for your needs
-* please refer to https://store.webkul.com/customisation-guidelines for more information.
-*
-* @author Webkul IN
-* @copyright Since 2010 Webkul
+* @author Webkul IN / TodayInTech
+* @copyright Since 2010 Webkul / TodayInTech
 * @license https://opensource.org/license/osl-3-0-php Open Software License version 3.0
 */
-
 
 .header-rmsearch-container {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 10;}
+  z-index: 10;
+}
 
 .header-rmsearch-hide-xs {
-  background-image: url("../img/black-opacity-5.png");}
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  padding-bottom: 25px;
+}
+
 .header-rmsearch-show-xs {
   background-color: #ffffff;
-  top: 0;}
+  top: 0;
+}
+
 .header-rmsearch-wrapper {
   display: table;
   height: 100%;
-  width: 100%;}
+  width: 100%;
+}
+
 .header-rmsearch-primary {
   display: table-cell;
-  vertical-align: middle;}
+  vertical-align: middle;
+}
+
 .header-rmsearch-inner-wrapper {
-  margin-top: 30px;
-  margin-bottom: 15px;}
-#make_booking_btn {
-  background-color: #BF9958;
-  width: 155px;
-  height: 50px;
-  color: #ffffff;
-  font-size: 18px;
-  font-family: 'PT Serif', serif;
-  font-weight: 400;}
-#make_booking_btn_div {
   margin-top: 20px;
-  text-align: center;}
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 16px 20px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+#make_booking_btn {
+  background: linear-gradient(135deg, #1292ff 0%, #0070e0 100%);
+  width: 180px;
+  height: 52px;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 8px 20px -4px rgba(18, 146, 255, 0.45);
+  transition: all 0.2s ease;
+}
+
+#make_booking_btn:hover {
+  background: linear-gradient(135deg, #0084f7 0%, #0060c2 100%);
+  transform: translateY(-1.5px);
+  box-shadow: 0 12px 26px -4px rgba(18, 146, 255, 0.55);
+}
+
+#make_booking_btn_div {
+  margin-top: 25px;
+  text-align: center;
+}
+
 @media (max-width: 767px) {
   .header-rmsearch-wrapper #search_hotel_block_form .grid {
-    grid-template-columns: 1fr;
-    column-gap: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
   .header-rmsearch-wrapper {
-    height: calc(100vw - 60px);
-    width: calc(100vw - 60px);
+    height: auto;
+    width: 100%;
+  }
+  .header-rmsearch-inner-wrapper {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 12px 8px;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
   }
 }
+
 .fancy_search_header_xs {
-  margin-top: 25px;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 6px;
+  padding-right: 6px;
   text-align: left;
-  font-size: 22px;}
+}
+
+.fancy_search_header_xs p {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
 .fancy_search_header_xs hr {
-    border: 1px solid #379bf0;
-    float: left;
-    margin-top: 5px;
-    width: 125px;}
-/* .fancybox-inner #search_hotel_block_form {
-  grid-template-columns: 1fr;
-} */
+  border: none;
+  height: 4px;
+  width: 48px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #1292ff 0%, #38bdf8 100%);
+  float: left;
+  margin: 0;
+  clear: both;
+}
+
+/* Fancybox Mobile Search Modal */
+.fancybox-skin {
+  border-radius: 20px !important;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.3) !important;
+  background: #ffffff !important;
+  padding: 24px !important;
+}
+
+.fancybox-inner {
+  overflow: visible !important;
+}

@@ -28,67 +28,27 @@
 {if $display_footer}
 <div id="footer" class="bootstrap hide">
 
-	<div class="col-sm-2 hidden-xs">
-		<a href="https://webkul.com" class="_blank">Webkul&trade;</a>
+	<div class="col-sm-4 hidden-xs">
+		<a href="https://todayintech.in" target="_blank" rel="noopener noreferrer">TodayInTech&#8482; Hotel PMS</a>
 		-
 		<span id="footer-load-time"><i class="icon-time" title="{l s='Load time: '}"></i> {number_format(microtime(true) - $timer_start, 3, '.', '')}s</span>
 	</div>
 
-	<div class="col-sm-2 hidden-xs">
-		<div class="social-networks">
-			<a class="link-social link-twitter _blank" href="https://twitter.com/qloapps" title="Twitter">
-				<i class="icon-twitter"></i>
-			</a>
-			<a class="link-social link-facebook _blank" href="https://www.facebook.com/qloapps" title="Facebook">
-				<i class="icon-facebook"></i>
-			</a>
-			<a class="link-social link-github _blank" href="https://github.com/webkul/hotelcommerce" title="Github">
-				<i class="icon-github"></i>
-			</a>
-		</div>
-	</div>
-	<div class="col-sm-5">
+	<div class="col-sm-4 text-center">
 		<div class="footer-contact">
-			<a href="https://qloapps.com/contact/" class="footer_link _blank">
+			<a href="https://todayintech.in/contact/" target="_blank" class="footer_link">
 				<i class="icon-envelope"></i>
-				{l s='Contact'}
+				{l s='Support & Help'}
 			</a>
 			/&nbsp;
-			<a href="https://forums.qloapps.com/category/7/bug-report" class="footer_link _blank">
-				<i class="icon-bug"></i>
-				{l s='Bug Tracker'}
+			<a href="https://todayintech.in/projects/hotel-management-system.html" target="_blank" class="footer_link">
+				<i class="icon-hotel"></i>
+				{l s='Documentation'}
 			</a>
-			/&nbsp;
-			<a href="https://forums.qloapps.com/" class="footer_link _blank">
-				<i class="icon-comments"></i>
-				{l s='Forum'}
-			</a>
-			/&nbsp;
-			<a href="https://qloapps.com/addons/" class="footer_link _blank">
-				<i class="icon-puzzle-piece"></i>
-				{l s='Addons'}
-			</a>
-			/&nbsp;
-			<a href="https://docs.qloapps.com/" class="footer_link _blank">
-				<i class="icon-book"></i>
-				{l s='Training'}
-			</a>
-			{if $host_mode}
-			/&nbsp;
-			<a href="https://qloapps.com/pricing/" class="footer_link _blank">
-				<i class="icon-circle status-page-dot"></i>
-				<span class="status-page-description"></span>
-			</a>
-			{/if}
-			{if $iso_is_fr && !$host_mode}
-			<p>Questions • Renseignements • Formations :
-				<strong>+33 (0)1.40.18.30.04</strong>
-			</p>
-			{/if}
 		</div>
 	</div>
 
-	<div class="col-sm-3">
+	<div class="col-sm-4 text-right">
 		{hook h="displayBackOfficeFooter"}
 	</div>
 

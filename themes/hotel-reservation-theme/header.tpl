@@ -87,7 +87,7 @@
 		{/if}
 		<div id="page" style="{if $page_name == 'index'}height: 100%;{/if}">
 			<div class="header-container" style="{if $page_name == 'index'}height: 100%;{/if}">
-				<header id="header" style='{if $page_name == "index"}height: 100%;{else}background-color:#252525;{/if}'>
+				<header id="header" style='{if $page_name == "index"}height: 100%;{else}background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-bottom: 1px solid rgba(255,255,255,0.08); box-shadow: 0 4px 20px rgba(0,0,0,0.15);{/if}'>
 					{if $page_name == "index" && $headerMediaItems}
 						{if $QLO_HEADER_MEDIA_TYPE == $QLO_HEADER_MEDIA_TYPE_IMAGE}
 							{if $headerMediaItems|@count == 1}

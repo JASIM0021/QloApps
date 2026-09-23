@@ -5,7 +5,7 @@
 
 {l s="Room Type"}
 
-{l s="Property Name"}
+{l s="Hotel"}
 
 {l s="Rooms Qty"}
 

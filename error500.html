@@ -1,95 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="description" content="This store is powered by Webkul" />
-        <style>
-            ::-moz-selection {
-                background: #b3d4fc;
-                text-shadow: none;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 — Server Incident | TodayInTech Hotel</title>
+    <meta name="description" content="TodayInTech Hotel Management System — Server Incident Recovery">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --primary-bg: #f0f9ff;
+            --navy: #0f172a;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-page: #f8fafc;
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.12), 0 15px 30px -20px rgba(0, 0, 0, 0.08);
+        }
 
-            ::selection {
-                background: #b3d4fc;
-                text-shadow: none;
-            }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-            html {
-                padding: 30px 10px;
-                font-size: 16px;
-                line-height: 1.4;
-                color: #737373;
-                background: #f0f0f0;
-                -webkit-text-size-adjust: 100%;
-                -ms-text-size-adjust: 100%;
-            }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: radial-gradient(109.41% 109.41% at 50% 50%, #f0f9ff 28.02%, #e2e8f0 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            line-height: 1.6;
+        }
 
-            html,
-            input {
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            }
+        .error-wrapper {
+            width: 100%;
+            max-width: 620px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-            body {
-                max-width:600px;
-                _width: 600px;
-                padding: 30px 20px 50px;
-                border: 1px solid #b3b3b3;
-                border-radius: 4px;
-                margin: 0 auto;
-                box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
-                background: #fcfcfc;
-            }
+        .brand-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
 
-            h1 {
-                margin: 0 10px;
-                font-size: 50px;
-                text-align: center;
-            }
+        .brand-header img {
+            height: 44px;
+            width: auto;
+        }
 
-            h1 span {
-                color: #bbb;
-            }
-            h2 {
-                color: #D35780;
-                margin: 0 10px;
-                font-size: 40px;
-                text-align: center;
-            }
+        .brand-header span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.02em;
+        }
 
-            h2 span {
-                color: #bbb;
-                font-size: 60px;
-            }
+        .error-card {
+            background: var(--card-bg);
+            border: 1.5px solid var(--card-border);
+            border-radius: 24px;
+            padding: 48px 36px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
 
-            h3 {
-                margin: 1.5em 0 0.5em;
-            }
+        .error-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #0284c7, #f59e0b, #10b981);
+        }
 
-            p {
-                margin: 1em 0;
-            }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fee2e2;
+            border: 1px solid #fca5a5;
+            color: #b91c1c;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-            ul {
-                padding: 0 0 0 40px;
-                margin: 1em 0;
-            }
+        .status-badge span.dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ef4444;
+            display: inline-block;
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+        }
 
-            .container {
-                max-width: 380px;
-                _width: 380px;
-                margin: 0 auto;
-            }
+        .error-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--primary-bg);
+            border: 1px solid rgba(2, 132, 199, 0.2);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            margin: 0 auto 20px;
+        }
 
-            input::-moz-focus-inner {
-                padding: 0;
-                border: 0;
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.3rem);
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
+        }
+
+        p.description {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 480px) {
+            .action-buttons {
+                flex-direction: row;
+                justify-content: center;
             }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h2><span>500</span> Server Error</h2>
-            <p>Oops, something went wrong.<br /><br />Try to refresh this page or feel free to contact us if the problem persists.</p>
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: 10px;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: 10px;
+            border: 1.5px solid #cbd5e1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background: var(--primary-bg);
+            transform: translateY(-2px);
+        }
+
+        .support-info {
+            padding-top: 20px;
+            border-top: 1px solid var(--card-border);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .support-info a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .support-info a:hover {
+            text-decoration: underline;
+        }
+
+        .page-footer {
+            margin-top: 28px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .page-footer a {
+            color: var(--primary-dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-wrapper">
+        <div class="brand-header">
+            <img src="/img/logo.png" alt="TodayInTech Hotel Logo" onerror="this.style.display='none'">
+            <span>TodayInTech Hotel PMS</span>
         </div>
-    </body>
+
+        <div class="error-card">
+            <div class="status-badge">
+                <span class="dot"></span> 500 &bull; Server Encounter
+            </div>
+
+            <div class="error-icon-wrapper">
+                <i class="fas fa-hotel"></i>
+            </div>
+
+            <h1>Oops! Something Went Wrong</h1>
+            <p class="description">
+                Our hotel booking engine encountered a temporary hiccup while fulfilling your request. Our automated monitors have been alerted.
+            </p>
+
+            <div class="action-buttons">
+                <button onclick="window.location.reload();" class="btn-primary">
+                    <i class="fas fa-rotate-right"></i> Try Again / Reload
+                </button>
+                <a href="/" class="btn-secondary">
+                    <i class="fas fa-house"></i> Hotel Home
+                </a>
+            </div>
+
+            <div class="support-info">
+                Need immediate reservation assistance? <a href="https://todayintech.in/contact/" target="_blank" rel="noopener noreferrer">Contact Engineering Support &rarr;</a>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            &copy; 2026 <a href="https://todayintech.in" target="_blank" rel="noopener noreferrer">TodayInTech</a>. All rights reserved.
+        </div>
+    </div>
+</body>
 </html>

@@ -310,20 +310,11 @@
 						</li>
 					{/if}
 
-					{if isset($upgrade_info->update_available) && $upgrade_info->update_available > 0}
-						<li class="hidden-md hidden-sm hidden-xs"><a href="{$upgrade_info->upgrade_url}">{l s='QloApps Update Availabe:'} {$upgrade_info->latest_availabe}</a></li>
-					{/if}
-					<li class="hidden-sm hidden-xs">
-						<a target="_blank" href="https://qloapps.com/addons/" class="toolbar_btn" title="{l s='Explore QloApps Addons'}">
-							<i class="icon-chain-broken"></i>
-							{l s='Explore QloApps Addons'}
-						</a>
-					</li>
 					{if {$base_url}}
 						<li>
 							<a href="{if isset($base_url_tc)}{$base_url_tc|escape:'html':'UTF-8'}{else}{$base_url|escape:'html':'UTF-8'}{/if}" id="header_foaccess" class="_blank" title="{l s='View my shop'}">
-								<span class="string-long">{l s='My site'}</span>
-								<span class="string-short">{l s='Site'}</span>
+								<span class="string-long">{l s='View Live Hotel'}</span>
+								<span class="string-short">{l s='Live Hotel'}</span>
 							</a>
 							{if isset($maintenance_mode) && $maintenance_mode == true}
 								<span class="maintenance-mode">
@@ -342,9 +333,6 @@
 						</a>
 						<ul id="employee_links" class="dropdown-menu">
 							<li><a href="{$link->getAdminLink('AdminEmployees')|escape:'html':'UTF-8'}&amp;id_employee={$employee->id|intval}&amp;updateemployee"><i class="icon-wrench"></i> {l s='My preferences'}</a></li>
-							{if $host_mode}
-							<li><a href="https://qloapps.com/pricing/" class="_blank"><i class="icon-wrench"></i> {l s='Hosted QloApps'}</a></li>
-							{/if}
 							<li><a id="header_logout" href="{$login_link|escape:'html':'UTF-8'}&amp;logout"><i class="icon-signout"></i> {l s='Sign out'}</a></li>
 						</ul>
 					</li>

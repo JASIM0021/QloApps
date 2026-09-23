@@ -87,8 +87,12 @@ class PrestaShopExceptionCore extends Exception
                 echo file_get_contents(_PS_ROOT_DIR_.'/error500.html');
             }
         }
-        // Log the error in the disk
-        $this->logError();
+        // Log the error on the disk safely
+        try {
+            $this->logError();
+        } catch (Exception $e) {
+            // Silently handle logger failure
+        }
         exit;
     }
 
