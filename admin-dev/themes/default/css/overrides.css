@@ -153,22 +153,22 @@ body.ps_back-office {
 }
 
 /* --------------------------------------------------------------------------
-   3. LEFT SIDEBAR (BESPOKE FLOATING PILL NAVIGATION)
+   3. LEFT SIDEBAR (DEEP MIDNIGHT NAVY & ELECTRIC BLUE ICON BADGES)
 -------------------------------------------------------------------------- */
 #nav-sidebar {
-    background: #060911 !important;
-    border-right: 1px solid #172033 !important;
-    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.25) !important;
+    background: #0b1329 !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 4px 0 30px rgba(0, 0, 0, 0.3) !important;
 }
 
 #nav-sidebar .searchtab {
-    padding: 16px 14px 10px !important;
+    padding: 16px 14px 12px !important;
     background: transparent !important;
 }
 
 #nav-sidebar .searchtab input {
-    background: #111827 !important;
-    border: 1.5px solid #1f2937 !important;
+    background: #152243 !important;
+    border: 1.5px solid #1e305e !important;
     border-radius: 10px !important;
     color: #f8fafc !important;
     font-size: 12.5px !important;
@@ -178,17 +178,17 @@ body.ps_back-office {
 
 #nav-sidebar .searchtab input:focus {
     border-color: #1292ff !important;
-    background: #0f172a !important;
-    box-shadow: 0 0 0 3px rgba(18, 146, 255, 0.2) !important;
+    background: #182852 !important;
+    box-shadow: 0 0 0 3px rgba(18, 146, 255, 0.25) !important;
 }
 
 #nav-sidebar ul.menu {
     margin-top: 8px !important;
-    padding: 0 4px !important;
+    padding: 0 6px !important;
 }
 
 #nav-sidebar ul.menu > li.maintab {
-    margin: 3px 6px !important;
+    margin: 4px 6px !important;
     border-radius: 10px !important;
     overflow: hidden !important;
 }
@@ -197,7 +197,7 @@ body.ps_back-office {
     color: #94a3b8 !important;
     font-size: 13px !important;
     font-weight: 500 !important;
-    padding: 10px 14px !important;
+    padding: 8px 12px !important;
     border-radius: 10px !important;
     transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
     display: flex !important;
@@ -205,35 +205,44 @@ body.ps_back-office {
     border: none !important;
 }
 
+/* Translucent Rounded Icon Badge */
 #nav-sidebar ul.menu > li.maintab > a.title i {
-    color: #64748b !important;
-    font-size: 15.5px !important;
+    color: #94a3b8 !important;
+    font-size: 14px !important;
     margin-right: 12px !important;
-    width: 22px !important;
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 7px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     text-align: center !important;
     transition: all 0.18s ease !important;
 }
 
 #nav-sidebar ul.menu > li.maintab:hover > a.title {
     color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: rgba(255, 255, 255, 0.06) !important;
 }
 
 #nav-sidebar ul.menu > li.maintab:hover > a.title i {
     color: #38bdf8 !important;
-    transform: scale(1.1);
+    background: rgba(18, 146, 255, 0.18) !important;
+    transform: scale(1.05);
 }
 
-/* Distinct Vibrant Active Pill */
+/* Distinct Electric Blue Active State */
 #nav-sidebar ul.menu > li.maintab.active > a.title {
-    background: linear-gradient(135deg, #1292ff 0%, #4f46e5 100%) !important;
+    background: linear-gradient(135deg, #1292ff 0%, #0066cc 100%) !important;
     color: #ffffff !important;
     font-weight: 700 !important;
-    box-shadow: 0 4px 16px rgba(18, 146, 255, 0.35) !important;
+    box-shadow: 0 4px 16px rgba(18, 146, 255, 0.4) !important;
 }
 
 #nav-sidebar ul.menu > li.maintab.active > a.title i {
     color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.22) !important;
 }
 
 /* Floating Submenus */
