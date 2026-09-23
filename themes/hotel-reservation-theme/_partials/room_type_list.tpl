@@ -29,7 +29,7 @@
 			<div class="col-sm-12 room_cont" data-id-product="{$room_v['id_product']|escape:'htmlall':'UTF-8'}">
 				<div class="row">
 					{block name='room_type_list_room_image'}
-						<div class="col-sm-4">
+						<div class="col-xs-12 col-sm-12 col-md-4">
 								<a href="{$room_v['product_link']|escape:'htmlall':'UTF-8'}">
 								<img src="{$room_v['image']|escape:'htmlall':'UTF-8'}" class="img-responsive room-type-image">
 								{block name='displayRoomTypeListImageAfter'}
@@ -39,7 +39,7 @@
 						</div>
 					{/block}
 					{block name='room_type_list_room_detail'}
-						<div class="col-sm-8 room_info_cont">
+						<div class="col-xs-12 col-sm-12 col-md-8 room_info_cont">
 							{block name='room_type_list_room_quantity'}
 								<div class="row">
 									<a href="{$room_v['product_link']|escape:'htmlall':'UTF-8'}"><p class="rm_heading col-sm-12 col-md-7">{$room_v['name']|escape:'htmlall':'UTF-8'}</p></a>

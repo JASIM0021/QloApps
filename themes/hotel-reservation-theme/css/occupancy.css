@@ -20,117 +20,218 @@
 * @license https://opensource.org/license/osl-3-0-php Open Software License version 3.0
 */
 
+.booking_guest_occupancy {
+    background-color: #f8fafc !important;
+    border: 1.5px solid #e2e8f0 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+    height: 44px !important;
+    border-radius: 10px !important;
+    color: #0f172a !important;
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    padding: 8px 14px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    cursor: pointer !important;
+    background-image: none !important;
+    text-align: center !important;
+    transition: all 0.2s ease !important;
+}
+
+.booking_guest_occupancy:hover,
+.booking_guest_occupancy:focus {
+    border-color: #1292ff !important;
+    background-color: #ffffff !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(18, 146, 255, 0.15) !important;
+}
+
 .booking_occupancy_wrapper {
-    border: none;
-    max-height: 380px;
-    overflow: auto;
-    box-shadow: 0 8px 25px -4px rgba(0,0,0,0.39);
-    left: 0px;
-    padding: 15px 20px;
-    min-width: 280px}
-    .booking_occupancy_wrapper .btn {
-      font-weight: 600;}
-    .booking_occupancy_wrapper .btn-primary {
-      background-color: #1292FF;
-      color: #FFF;}
-    .booking_occupancy_wrapper .occupancy-info-separator {
-      margin-bottom: 15px;
-      margin-top: 15px;
-      margin-right: -20px;
-        margin-left: -20px;}
-    .booking_occupancy_wrapper .occupancy-input-errors {
-      font-weight: 700;}
-    .booking_occupancy_wrapper .children_age_info_block {
-      display: none;}
-    .booking_occupancy_wrapper .children_age_info_block label {
-      font-size: 12px;
-      color: #777777;}
-      .booking_occupancy_wrapper .children_age_info_block .children_ages{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        justify-content: space-between;}
-    .booking_occupancy_wrapper .label-desc-txt {
-      font-size: 12px;
-      color: #777777;}
-    .booking_occupancy_wrapper label {
-      font-size: 14px;
-      color: #333333;
-      font-weight: 400;}
-      .booking_occupancy_wrapper .add_new_occupancy_btn {
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 14px;
-        color: #0000FF;}
-        .booking_occupancy_wrapper .occupancy_block_actions {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;}
-        .booking_occupancy_wrapper .add_new_occupancy_btn:active, .booking_occupancy_wrapper .add_new_occupancy_btn:focus, .booking_occupancy_wrapper .add_new_occupancy_btn:hover {
-          text-decoration: none;
-          color: #0000FF;}
-      .booking_occupancy_wrapper .add_new_occupancy_btn.disabled,
-      .booking_occupancy_wrapper .add_new_occupancy_btn.disabled:active,
-      .booking_occupancy_wrapper .add_new_occupancy_btn.disabled:focus,
-      .booking_occupancy_wrapper .add_new_occupancy_btn.disabled:hover {
-        color: #333;
-        opacity: 0.5;
-        cursor: not-allowed;}
-      .booking_occupancy_wrapper .occupancy_info_head {
-        font-size: 14px;
-        color: #333333;
-        font-weight: bold;
-        margin-bottom: 10px;}
-        .booking_occupancy_wrapper .occupancy_info_head .remove-room-link {
-          font-size: 12px;
-          color: #FF4343;
-          text-align: right;}
-        .booking_occupancy_wrapper .occupancy_info_block .occupancy_count, .qty_count {
-          padding: 14px;
-          border: 1px solid #E1E3E7;
-          font-size: 14px;
-          font-weight: 600;
-          color: #333333;
-          text-align: center;
-          border-radius: 4px;}
-          .rm_qty_cont .qty_count, .rm_qty_cont .qty_direction a {
-            border: 1px solid #999999;
-            box-shadow: 0 1px 0 0 rgb(0 0 0 / 13%);}
-        .booking_occupancy_wrapper .occupancy_info_block .occupancy_count > span, .qty_count > span {
-          min-width: 21px;
-          text-align: center;
-          display: block;}
-        .qty_direction {
-          margin-left: 3px;
-          width: 22px;}
-          .qty_direction a {
-            padding: 1px 5px;
-            border: 0px;
-            border: 1px solid #E1E3E7;
-            color: #333;
-            border-radius: 4px;
-            font-weight: 400;}
-            .qty_direction .occupancy_quantity_down, .qty_direction .quantity_down {
-              margin-top: 3px;}
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    max-height: 420px;
+    overflow-y: auto;
+    box-shadow: 0 12px 36px -4px rgba(15, 23, 42, 0.16);
+    background: #ffffff;
+    padding: 20px;
+    min-width: 300px;
+    z-index: 1050;
+}
 
-    .booking_occupancy_wrapper .children_ages .col-xs-4 {
-      padding-left: 5px;
-      margin-bottom: 5px;
-      padding-right: 5px;}
-    .booking_occupancy_wrapper .children_ages select {
-      background-color: #fff;
-      height: 37px;
-      border-radius: 4px;
-      padding: 3px 5px;
-      font-size: 12px;
-      color: #333;
-      border: 1px solid #E1E3E7;
-      width: 100%;}
+.booking_occupancy_wrapper .occupancy_info_head {
+    font-size: 14px;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.booking_occupancy_wrapper .occupancy_info_head .remove-room-link,
+.booking_occupancy_wrapper .occupancy_info_head .remove-stay-link {
+    font-size: 12px;
+    color: #ef4444;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
 
-  @media (max-width: 450) {
-    .booking_occupancy_wrapper .occupancy_info_block .occupancy_count_block {
-      width: 100%;}
-    .booking_occupancy_wrapper .occupancy_info_block .occupancy_count {
-        width: 80%;}
-  }
+.booking_occupancy_wrapper .occupancy_info_head .remove-room-link:hover,
+.booking_occupancy_wrapper .occupancy_info_head .remove-stay-link:hover {
+    color: #b91c1c;
+    text-decoration: underline;
+}
+
+.booking_occupancy_wrapper .occupancy_count_block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.booking_occupancy_wrapper .occupancy_count_block label {
+    font-size: 13px;
+    color: #334155;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.booking_occupancy_wrapper .occupancy_count_block .col-sm-12 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+}
+
+.booking_occupancy_wrapper .occupancy_count {
+    min-width: 32px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}
+
+.booking_occupancy_wrapper .qty_direction {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 0;
+    width: auto;
+}
+
+.booking_occupancy_wrapper .qty_direction a.occupancy_quantity_down,
+.booking_occupancy_wrapper .qty_direction a.occupancy_quantity_up {
+    width: 32px;
+    height: 32px;
+    border-radius: 50% !important;
+    border: 1.5px solid #cbd5e1 !important;
+    background-color: #ffffff !important;
+    color: #334155 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-decoration: none !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+    transition: all 0.15s ease !important;
+}
+
+.booking_occupancy_wrapper .qty_direction a:hover,
+.booking_occupancy_wrapper .qty_direction a:focus {
+    border-color: #1292ff !important;
+    color: #1292ff !important;
+    background-color: #eff6ff !important;
+    transform: scale(1.08);
+}
+
+.booking_occupancy_wrapper .occupancy-info-separator {
+    margin: 16px -20px;
+    border: 0;
+    border-top: 1px solid #f1f5f9;
+}
+
+.booking_occupancy_wrapper .occupancy_block_actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 14px;
+}
+
+.booking_occupancy_wrapper .add_new_occupancy_btn {
+    font-weight: 600;
+    font-size: 13px;
+    color: #1292ff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.15s ease;
+}
+
+.booking_occupancy_wrapper .add_new_occupancy_btn:hover {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.booking_occupancy_wrapper .add_new_occupancy_btn.disabled {
+    color: #94a3b8;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.booking_occupancy_wrapper .submit_occupancy_btn {
+    background: linear-gradient(135deg, #1292ff 0%, #0066cc 100%) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 6px 18px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(18, 146, 255, 0.3) !important;
+    transition: all 0.2s ease !important;
+}
+
+.booking_occupancy_wrapper .submit_occupancy_btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(18, 146, 255, 0.4) !important;
+}
+
+.booking_occupancy_wrapper .label-desc-txt {
+    font-size: 11.5px;
+    color: #64748b;
+}
+
+.booking_occupancy_wrapper .children_ages select {
+    background-color: #f8fafc;
+    height: 38px;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 12.5px;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .booking_occupancy_wrapper {
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 90vw !important;
+        max-width: 360px !important;
+        max-height: 80vh !important;
+        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3) !important;
+        border-radius: 20px !important;
+    }
+}

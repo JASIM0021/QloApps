@@ -187,3 +187,16 @@
     font-weight: 600;
     color: #0f172a;
 }
+
+@media (max-width: 991px) {
+    .layered_filter_cont {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-radius: 14px;
+    }
+
+    .lf_sub_cont {
+        max-height: 200px;
+        padding: 10px 14px 14px;
+    }
+}

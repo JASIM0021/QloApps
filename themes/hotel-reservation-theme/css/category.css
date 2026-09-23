@@ -22,10 +22,13 @@
     border-bottom: 1px solid #f1f5f9;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .catSortBlock .filter_dw_cont {
     position: relative;
+    min-width: 200px;
 }
 
 .catSortBlock .filter_dw_cont .dropdown-menu {
@@ -53,8 +56,12 @@
     color: #0f172a;
     font-size: 14px;
     font-weight: 600;
-    margin-top: 8px;
     text-align: left;
+    margin: 0;
+}
+
+.sortBlockHeading p {
+    margin: 0;
 }
 
 .filter_dw_cont button {
@@ -102,6 +109,7 @@
     aspect-ratio: 16/10;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
     transition: transform 0.35s ease;
+    display: block;
 }
 
 .room_cont:hover .room-type-image {
@@ -251,25 +259,6 @@ img.rm_amen {
     gap: 12px;
 }
 
-.booking_guest_occupancy.form-control {
-    background-color: #f8fafc !important;
-    border: 1.5px solid #e2e8f0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-    height: 44px;
-    border-radius: 10px;
-    color: #0f172a;
-    font-size: 13.5px;
-    font-weight: 500;
-    padding: 8px 12px;
-    transition: all 0.2s ease;
-}
-
-.booking_guest_occupancy.form-control:focus {
-    border-color: #1292ff;
-    box-shadow: 0 0 0 3px rgba(18, 146, 255, 0.15);
-    background-color: #ffffff !important;
-}
-
 .btn_book_now_with_occupancy,
 .btn_book_now_with_occupancy.btn,
 .btn_book_now_with_occupancy.button {
@@ -287,6 +276,7 @@ img.rm_amen {
     align-items: center !important;
     justify-content: center !important;
     text-decoration: none !important;
+    cursor: pointer !important;
 }
 
 .btn_book_now_with_occupancy:hover,
@@ -310,6 +300,7 @@ img.rm_amen {
     text-align: center;
 }
 
+/* Tablet & Desktop Specifics */
 @media (min-width: 992px) {
     .rm_left {
         text-align: right;
@@ -320,36 +311,84 @@ img.rm_amen {
         text-align: right;
         justify-content: flex-end;
     }
+
+    .room_features_cont > div {
+        min-height: 47px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px 0;
+    }
 }
 
-@media (max-width: 768px) {
+/* Mobile & Small Screen (< 992px) */
+@media (max-width: 991px) {
+    .cat_cont {
+        padding: 16px 12px;
+        border-radius: 16px;
+    }
+
+    .room_cont {
+        padding: 16px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+    }
+
     .room_info_cont {
         padding-left: 0;
-        margin-top: 15px;
+        margin-top: 16px;
     }
 
     .rm_heading {
         font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .rm_desc {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .room-type-image {
+        aspect-ratio: 16/10;
+        max-height: 240px;
+    }
+
+    .room_type_list_actions {
+        margin-top: 10px;
     }
 
     .booking_room_fields {
-        justify-content: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
         width: 100%;
+        gap: 10px;
         margin-top: 12px;
     }
 
     .booking_room_fields > div,
-    .booking_guest_occupancy_conatiner {
+    .booking_guest_occupancy_conatiner,
+    .booking_guest_occupancy_conatiner .form-group {
         width: 100%;
+        margin-bottom: 0;
+    }
+
+    .booking_guest_occupancy {
+        width: 100% !important;
+        height: 46px !important;
     }
 
     .btn_book_now_with_occupancy {
-        width: 100%;
+        width: 100% !important;
         padding: 13px 20px !important;
         font-size: 15px !important;
+        height: 46px !important;
     }
 
     .rm_price_cont {
         justify-content: flex-start;
+        margin-top: 6px;
     }
 }
