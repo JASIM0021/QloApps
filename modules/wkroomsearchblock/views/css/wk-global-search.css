@@ -48,11 +48,12 @@
 .fancybox-wrap #search_hotel_block_form .form-group.xs-calendar {
   position: relative;
 }
+
 @media (max-width: 767px) {
   #search_hotel_block_form .grid {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
   }
   #search_hotel_block_form .grid .grid-item {
     display: block;
@@ -69,11 +70,12 @@
   font-size: 14px;
   font-weight: 500;
   background-color: #ffffff;
-  height: 56px;
-  min-height: 56px;
+  height: 54px;
+  min-height: 54px;
   padding: 10px 16px;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
 }
 
 #search_hotel_block_form .header-rmsearch-input:hover {
@@ -87,14 +89,20 @@
   outline: none;
 }
 
+#search_hotel_block_form .input-location {
+  padding-left: 44px !important;
+  padding-right: 20px !important;
+  background: #ffffff url("../img/icon-map-pin.svg") no-repeat 14px 50% !important;
+  background-size: 18px 18px !important;
+}
+
 #search_hotel_block_form #id_hotel_button {
   appearance: none;
   width: 100%;
-  padding-left: 40px;
-  padding-right: 25px;
-  background: url("../../views/img/icon-hotel.svg") no-repeat 14px 50%, url("../../views/img/icon-dropdown-arrow.svg") no-repeat calc(100% - 14px) 50%;
-  background-size: 18px 18px, 12px 12px;
-  background-color: #ffffff;
+  padding-left: 44px !important;
+  padding-right: 28px !important;
+  background: #ffffff url("../img/icon-hotel.svg") no-repeat 14px 50%, url("../img/icon-dropdown-arrow.svg") no-repeat calc(100% - 12px) 50% !important;
+  background-size: 18px 18px, 12px 12px !important;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -104,9 +112,14 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 44px !important;
+  padding-right: 28px !important;
+  background: #ffffff url("../img/icon-calendar.svg") no-repeat 14px 50%, url("../img/icon-dropdown-arrow.svg") no-repeat calc(100% - 12px) 50% !important;
+  background-size: 18px 18px, 12px 12px !important;
   position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 #search_hotel_block_form .input-date.focused {
@@ -119,12 +132,14 @@
   align-items: center;
   color: #1e293b;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13.5px;
+  letter-spacing: -0.01em;
 }
 
 #search_hotel_block_form .input-date span i {
   color: #94a3b8;
   margin: 0 6px;
+  transform: scale(0.8, 0.6);
 }
 
 #search_hotel_block_form .input-occupancy {
@@ -132,16 +147,20 @@
   align-items: center;
   cursor: pointer;
   text-align: left;
-  padding-left: 16px;
-  padding-right: 16px;
-  background: #ffffff url("../../views/img/icon-dropdown-arrow.svg") no-repeat calc(100% - 14px) 50%;
-  background-size: 12px 12px;
+  padding-left: 44px !important;
+  padding-right: 28px !important;
+  background: #ffffff url("../img/icon-users.svg") no-repeat 14px 50%, url("../img/icon-dropdown-arrow.svg") no-repeat calc(100% - 12px) 50% !important;
+  background-size: 18px 18px, 12px 12px !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 #search_hotel_block_form .input-occupancy span {
   color: #1e293b;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13.5px;
+  letter-spacing: -0.01em;
 }
 
 .header-rmsearch-input::-webkit-input-placeholder {
@@ -230,7 +249,7 @@
   text-transform: uppercase;
   border: none;
   border-radius: 12px;
-  min-height: 56px;
+  min-height: 54px;
   box-shadow: 0 8px 22px -4px rgba(18, 146, 255, 0.42);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -285,6 +304,24 @@
 }
 #search_occupancy_wrapper.bottom {
   top: 100%;
+}
+
+@media (max-width: 767px) {
+  #search_occupancy_wrapper {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    top: 100% !important;
+    margin-top: 6px !important;
+    border-radius: 14px !important;
+    box-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.25) !important;
+    z-index: 1050 !important;
+    padding: 16px !important;
+  }
 }
 
 #search_occupancy_wrapper .occupancy-info-separator {

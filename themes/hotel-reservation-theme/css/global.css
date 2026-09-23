@@ -9441,16 +9441,20 @@ div a.our_properties_link{
 
 /* TodayInTech Brand & Mobile UI Polish */
 @media (max-width: 767px) {
+    header#header .nav,
+    header .header-top {
+        background: rgba(15, 23, 42, 0.9) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+    }
+    header .row #header_logo {
+        padding: 8px 0 !important;
+    }
     header .row #header_logo img {
-        max-height: 46px;
-        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
-    }
-    .fancybox-wrap {
-        width: calc(100vw - 32px) !important;
-        left: 16px !important;
-    }
-    .fancybox-inner {
-        width: 100% !important;
+        max-height: 42px !important;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)) !important;
     }
 }
+
 

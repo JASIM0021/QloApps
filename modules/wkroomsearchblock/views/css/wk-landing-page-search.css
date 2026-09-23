@@ -80,7 +80,7 @@
   .header-rmsearch-wrapper #search_hotel_block_form .grid {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
   }
   .header-rmsearch-wrapper {
     height: auto;
@@ -97,26 +97,26 @@
 }
 
 .fancy_search_header_xs {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  padding-left: 6px;
-  padding-right: 6px;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  padding-left: 4px;
+  padding-right: 4px;
   text-align: left;
 }
 
 .fancy_search_header_xs p {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   color: #0f172a;
   letter-spacing: -0.025em;
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
   line-height: 1.2;
 }
 
 .fancy_search_header_xs hr {
   border: none;
-  height: 4px;
-  width: 48px;
+  height: 3.5px;
+  width: 44px;
   border-radius: 2px;
   background: linear-gradient(90deg, #1292ff 0%, #38bdf8 100%);
   float: left;
@@ -134,4 +134,35 @@
 
 .fancybox-inner {
   overflow: visible !important;
+}
+
+@media (max-width: 767px) {
+  .fancybox-wrap {
+    width: calc(100vw - 24px) !important;
+    left: 12px !important;
+    right: 12px !important;
+    margin: 0 auto !important;
+  }
+  .fancybox-skin {
+    padding: 20px 14px !important;
+    border-radius: 18px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+  .fancybox-inner {
+    width: 100% !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+  .fancybox-close {
+    top: 12px !important;
+    right: 12px !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: #f1f5f9 url("../img/icon-close.svg") no-repeat center center !important;
+    background-size: 14px 14px !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+    z-index: 1000 !important;
+  }
 }
