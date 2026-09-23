@@ -1,88 +1,110 @@
 /**
-* TodayInTech Hotel PMS - Luxury Admin Panel Overrides
-* Loaded after all default back-office styles
+* TodayInTech Hotel PMS - Bespoke Luxury Admin Theme Overrides
+* Complete White-Label & Modern SaaS UI
 */
 
 /* --------------------------------------------------------------------------
    1. GLOBAL CANVAS & TYPOGRAPHY
 -------------------------------------------------------------------------- */
 body.ps_back-office {
-    background-color: #f1f5f9 !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-    color: #1e293b !important;
+    background-color: #f8fafc !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Helvetica Neue", Arial, sans-serif !important;
+    color: #0f172a !important;
+    letter-spacing: -0.01em !important;
 }
 
 #main {
-    background-color: #f1f5f9 !important;
+    background-color: #f8fafc !important;
 }
 
 #content {
-    background-color: #f1f5f9 !important;
-    padding: 20px 24px !important;
+    background-color: #f8fafc !important;
+    padding: 24px 28px !important;
 }
 
 /* --------------------------------------------------------------------------
-   2. TOP NAVIGATION BAR
+   2. TOP NAVIGATION BAR (BESPOKE OBSIDIAN GLASS)
 -------------------------------------------------------------------------- */
 #header {
-    background: #0f172a !important;
+    background: #090d16 !important;
     border-bottom: 1px solid #1e293b !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25) !important;
+    position: relative !important;
+}
+
+/* Top 3px Vibrant Brand Gradient Accent */
+#header::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, #1292ff 0%, #6366f1 40%, #06b6d4 80%, #38bdf8 100%) !important;
+    z-index: 1000 !important;
 }
 
 #header_infos {
     background: transparent !important;
-    height: 52px !important;
+    height: 56px !important;
     display: flex !important;
     align-items: center !important;
+    padding: 0 16px !important;
 }
 
 #header_shopname {
     color: #ffffff !important;
-    font-size: 15px !important;
+    font-size: 15.5px !important;
     font-weight: 700 !important;
-    letter-spacing: -0.01em !important;
-    margin-right: 14px !important;
+    letter-spacing: -0.02em !important;
+    margin-right: 12px !important;
     text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
 }
 
 #shop_version {
-    background: rgba(56, 189, 248, 0.12) !important;
+    background: linear-gradient(135deg, rgba(18, 146, 255, 0.18) 0%, rgba(99, 102, 241, 0.18) 100%) !important;
     color: #38bdf8 !important;
-    border: 1px solid rgba(56, 189, 248, 0.3) !important;
+    border: 1px solid rgba(56, 189, 248, 0.35) !important;
     border-radius: 9999px !important;
-    padding: 2px 8px !important;
+    padding: 2px 10px !important;
     font-size: 11px !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     margin-right: 16px !important;
     display: inline-block !important;
 }
 
 #quick_select {
-    background: #1e293b !important;
-    color: #e2e8f0 !important;
-    border: 1px solid #334155 !important;
-    border-radius: 8px !important;
+    background: #131b2e !important;
+    color: #cbd5e1 !important;
+    border: 1px solid #283548 !important;
+    border-radius: 10px !important;
     padding: 6px 14px !important;
     font-size: 12.5px !important;
-    font-weight: 500 !important;
-    transition: all 0.2s ease !important;
+    font-weight: 600 !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
 }
 
 #quick_select:hover {
-    background: #334155 !important;
+    background: #1e293b !important;
     color: #ffffff !important;
+    border-color: #3b82f6 !important;
 }
 
 #header_notifs_icon_wrapper > li > a.notifs {
     color: #94a3b8 !important;
     font-size: 15px !important;
     padding: 8px 12px !important;
-    transition: color 0.15s ease !important;
+    border-radius: 8px !important;
+    transition: all 0.15s ease !important;
 }
 
 #header_notifs_icon_wrapper > li > a.notifs:hover {
     color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.06) !important;
 }
 
 .notifs_badge {
@@ -92,7 +114,31 @@ body.ps_back-office {
     font-size: 10px !important;
     font-weight: 700 !important;
     padding: 2px 6px !important;
-    border: 1.5px solid #0f172a !important;
+    border: 1.5px solid #090d16 !important;
+}
+
+/* View Live Hotel Pill */
+#header_foaccess {
+    background: linear-gradient(135deg, rgba(18, 146, 255, 0.12) 0%, rgba(99, 102, 241, 0.12) 100%) !important;
+    border: 1.5px solid rgba(56, 189, 248, 0.4) !important;
+    color: #38bdf8 !important;
+    border-radius: 9999px !important;
+    padding: 6px 16px !important;
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    transition: all 0.2s ease !important;
+    margin-right: 12px !important;
+}
+
+#header_foaccess:hover {
+    background: linear-gradient(135deg, #1292ff 0%, #4f46e5 100%) !important;
+    border-color: #1292ff !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(18, 146, 255, 0.4) !important;
+    transform: translateY(-1px) !important;
 }
 
 #header_employee_box .employee_avatar {
@@ -101,103 +147,119 @@ body.ps_back-office {
 }
 
 #header_employee_box #employee_infos {
-    color: #e2e8f0 !important;
-    font-weight: 500 !important;
+    color: #f1f5f9 !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
 }
 
 /* --------------------------------------------------------------------------
-   3. LEFT SIDEBAR NAVIGATION
+   3. LEFT SIDEBAR (BESPOKE FLOATING PILL NAVIGATION)
 -------------------------------------------------------------------------- */
 #nav-sidebar {
-    background: #0b1120 !important;
-    border-right: 1px solid #1e293b !important;
-    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.12) !important;
+    background: #060911 !important;
+    border-right: 1px solid #172033 !important;
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.25) !important;
 }
 
 #nav-sidebar .searchtab {
-    padding: 12px 14px !important;
+    padding: 16px 14px 10px !important;
     background: transparent !important;
 }
 
 #nav-sidebar .searchtab input {
-    background: #1e293b !important;
-    border: 1px solid #334155 !important;
-    border-radius: 8px !important;
-    color: #f1f5f9 !important;
+    background: #111827 !important;
+    border: 1.5px solid #1f2937 !important;
+    border-radius: 10px !important;
+    color: #f8fafc !important;
     font-size: 12.5px !important;
-    padding: 7px 12px !important;
+    padding: 8px 12px !important;
     transition: all 0.2s ease !important;
 }
 
 #nav-sidebar .searchtab input:focus {
     border-color: #1292ff !important;
-    box-shadow: 0 0 0 2px rgba(18, 146, 255, 0.25) !important;
+    background: #0f172a !important;
+    box-shadow: 0 0 0 3px rgba(18, 146, 255, 0.2) !important;
 }
 
 #nav-sidebar ul.menu {
-    margin-top: 6px !important;
+    margin-top: 8px !important;
+    padding: 0 4px !important;
+}
+
+#nav-sidebar ul.menu > li.maintab {
+    margin: 3px 6px !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
 }
 
 #nav-sidebar ul.menu > li.maintab > a.title {
     color: #94a3b8 !important;
     font-size: 13px !important;
     font-weight: 500 !important;
-    padding: 11px 18px !important;
-    border-left: 3.5px solid transparent !important;
-    transition: all 0.15s ease !important;
+    padding: 10px 14px !important;
+    border-radius: 10px !important;
+    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
     display: flex !important;
     align-items: center !important;
+    border: none !important;
 }
 
 #nav-sidebar ul.menu > li.maintab > a.title i {
     color: #64748b !important;
-    font-size: 16px !important;
+    font-size: 15.5px !important;
     margin-right: 12px !important;
-    width: 20px !important;
+    width: 22px !important;
     text-align: center !important;
-    transition: color 0.15s ease !important;
+    transition: all 0.18s ease !important;
 }
 
 #nav-sidebar ul.menu > li.maintab:hover > a.title {
     color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.04) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
 }
 
 #nav-sidebar ul.menu > li.maintab:hover > a.title i {
     color: #38bdf8 !important;
+    transform: scale(1.1);
 }
 
+/* Distinct Vibrant Active Pill */
 #nav-sidebar ul.menu > li.maintab.active > a.title {
-    background: linear-gradient(90deg, rgba(18, 146, 255, 0.16) 0%, transparent 100%) !important;
+    background: linear-gradient(135deg, #1292ff 0%, #4f46e5 100%) !important;
     color: #ffffff !important;
-    font-weight: 600 !important;
-    border-left-color: #1292ff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 16px rgba(18, 146, 255, 0.35) !important;
 }
 
 #nav-sidebar ul.menu > li.maintab.active > a.title i {
-    color: #1292ff !important;
+    color: #ffffff !important;
 }
 
+/* Floating Submenus */
 #nav-sidebar ul.menu > li.maintab ul.submenu {
-    background: #1e293b !important;
-    border: 1px solid #334155 !important;
-    border-radius: 12px !important;
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4) !important;
-    padding: 6px !important;
+    background: #0f172a !important;
+    border: 1px solid #1e293b !important;
+    border-radius: 14px !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5) !important;
+    padding: 8px !important;
+    margin-left: 8px !important;
 }
 
 #nav-sidebar ul.menu > li.maintab ul.submenu li a {
-    color: #cbd5e1 !important;
+    color: #94a3b8 !important;
     font-size: 13px !important;
+    font-weight: 500 !important;
     padding: 8px 14px !important;
-    border-radius: 6px !important;
+    border-radius: 8px !important;
     transition: all 0.15s ease !important;
 }
 
 #nav-sidebar ul.menu > li.maintab ul.submenu li a:hover,
 #nav-sidebar ul.menu > li.maintab ul.submenu li.active a {
-    background: rgba(18, 146, 255, 0.14) !important;
+    background: rgba(18, 146, 255, 0.15) !important;
     color: #38bdf8 !important;
+    font-weight: 600 !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -207,7 +269,7 @@ body.ps_back-office {
     background: #ffffff !important;
     border: 1px solid #e2e8f0 !important;
     border-radius: 16px !important;
-    box-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.05) !important;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
     margin-bottom: 24px !important;
 }
 
