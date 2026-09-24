@@ -31,7 +31,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=0.75, user-scalable=0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<link rel="icon" type="image/x-icon" href="{$img_dir}favicon.ico" />
 	<link rel="apple-touch-icon" href="{$img_dir}app_icon.png" />
@@ -114,6 +114,7 @@
 
 {if $display_header}
 	<body class="ps_back-office{if $employee->bo_menu} page-sidebar{if $collapse_menu} page-sidebar-closed{/if}{else} page-topbar{/if} {$smarty.get.controller|escape|strtolower}">
+	<div id="mobile-sidebar-backdrop"></div>
 	{* begin  HEADER *}
 	<header id="header" class="bootstrap">
 		<nav id="header_infos" role="navigation">
@@ -360,6 +361,28 @@
 				{l s='For security reasons, you must also delete the /install folder.'}
 			</div>
 		{/if}
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#header_nav_toggle').on('click', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					$('body').toggleClass('mobile-sidebar-open');
+				});
+
+				$('#mobile-sidebar-backdrop').on('click', function() {
+					$('body').removeClass('mobile-sidebar-open');
+				});
+
+				$('#nav-sidebar .menu a').on('click', function() {
+					if ($(window).width() < 992) {
+						if (!$(this).parent().hasClass('has_submenu') || $(this).parent().hasClass('hover')) {
+							$('body').removeClass('mobile-sidebar-open');
+						}
+					}
+				});
+			});
+		</script>
 
 		{hook h='displayAdminAfterHeader'}
 

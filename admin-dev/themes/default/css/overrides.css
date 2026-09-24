@@ -456,3 +456,176 @@ body.ps_back-office {
     font-weight: 800 !important;
     margin-top: 4px !important;
 }
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE MOBILE DRAWER & OFF-CANVAS SIDEBAR (< 992px)
+-------------------------------------------------------------------------- */
+#mobile-sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(11, 19, 41, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 99998;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+@media (max-width: 991px) {
+    /* Main Layout full width */
+    body.ps_back-office #main,
+    body.ps_back-office.page-sidebar #main,
+    body.ps_back-office.page-sidebar-closed #main {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        width: 100% !important;
+    }
+
+    body.ps_back-office #content,
+    body.ps_back-office.page-sidebar #content,
+    body.ps_back-office.page-sidebar-closed #content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 16px 12px !important;
+    }
+
+    /* Off-canvas sidebar */
+    #nav-sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        width: 280px !important;
+        max-width: 85vw !important;
+        height: 100vh !important;
+        z-index: 99999 !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        box-shadow: none !important;
+    }
+
+    /* When mobile sidebar is open */
+    body.mobile-sidebar-open {
+        overflow: hidden !important;
+    }
+
+    body.mobile-sidebar-open #nav-sidebar {
+        transform: translateX(0) !important;
+        box-shadow: 10px 0 35px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    body.mobile-sidebar-open #mobile-sidebar-backdrop {
+        display: block !important;
+        opacity: 1 !important;
+    }
+
+    /* Always show menu titles & icons in mobile drawer */
+    #nav-sidebar ul.menu > li.maintab > a.title {
+        display: flex !important;
+        align-items: center !important;
+        padding: 10px 14px !important;
+    }
+
+    #nav-sidebar ul.menu > li.maintab > a.title span {
+        display: inline-block !important;
+        font-size: 13.5px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    #nav-sidebar ul.menu > li.maintab > a.title i {
+        display: inline-flex !important;
+        margin-right: 12px !important;
+        min-width: 32px !important;
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    #nav-sidebar .menu-collapse {
+        display: none !important;
+    }
+
+    /* Header Nav adjustments for mobile */
+    #header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+    }
+
+    #header_infos {
+        height: auto !important;
+        min-height: 52px !important;
+        padding: 8px 12px !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+
+    #header_nav_toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        color: #ffffff !important;
+        border-radius: 8px !important;
+        padding: 6px 10px !important;
+        font-size: 16px !important;
+        cursor: pointer !important;
+        margin-right: 8px !important;
+    }
+
+    #header_nav_toggle:hover,
+    #header_nav_toggle:active {
+        background: #1292ff !important;
+        border-color: #1292ff !important;
+        color: #ffffff !important;
+    }
+
+    #header_shopversion {
+        display: none !important;
+    }
+
+    #header_shopname {
+        font-size: 14px !important;
+        max-width: 140px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    #header_foaccess {
+        padding: 4px 10px !important;
+        font-size: 11px !important;
+        margin-right: 4px !important;
+    }
+
+    #header_notifs_icon_wrapper {
+        margin: 0 !important;
+    }
+
+    #header_employee_box {
+        margin-left: auto !important;
+    }
+
+    /* Submenus on mobile */
+    #nav-sidebar ul.menu > li.maintab ul.submenu {
+        position: static !important;
+        display: block !important;
+        background: rgba(0, 0, 0, 0.25) !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 4px 0 4px 20px !important;
+        margin: 4px 0 !important;
+        border-radius: 8px !important;
+    }
+
+    #nav-sidebar ul.menu > li.maintab:not(.hover):not(.active) ul.submenu {
+        display: none !important;
+    }
+}
