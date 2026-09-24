@@ -70,7 +70,7 @@
                                 <div class="form-group input-group">
                                     <button id="datepickerExpand" class="btn btn-default" type="button">
                                         <i class="icon-calendar-empty"></i>
-                                        <span class="hidden-xs">
+                                        <span class="datepicker-date-range">
                                             {l s='From'}
                                             <strong class="text-info" id="datepicker-from-info">{dateFormat date=$date_from}</strong>
                                             {l s='To'}

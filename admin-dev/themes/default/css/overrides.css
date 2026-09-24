@@ -551,6 +551,63 @@ body.ps_back-office {
         display: none !important;
     }
 
+    /* --------------------------------------------------------------------------
+       8.1. REMOVE LEGACY KPI RIBBON ARTIFACTS & MODERNIZE CARDS
+    -------------------------------------------------------------------------- */
+    .box-stats::before,
+    .box-stats::after,
+    .kpi-container .box-stats::before,
+    .kpi-container .box-stats::after {
+        display: none !important;
+        background-image: none !important;
+        content: none !important;
+    }
+
+    .kpi-container .box-stats,
+    .box-stats {
+        position: relative !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 14px !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+        padding: 12px 14px !important;
+        overflow: hidden !important;
+    }
+
+    .kpi-container .box-stats.color1 { border-left: 4px solid #3b82f6 !important; }
+    .kpi-container .box-stats.color2 { border-left: 4px solid #0ea5e9 !important; }
+    .kpi-container .box-stats.color3 { border-left: 4px solid #10b981 !important; }
+    .kpi-container .box-stats.color4 { border-left: 4px solid #f59e0b !important; }
+    .kpi-container .box-stats.color5 { border-left: 4px solid #8b5cf6 !important; }
+    .kpi-container .box-stats.color6 { border-left: 4px solid #ef4444 !important; }
+    .kpi-container .box-stats.color7 { border-left: 4px solid #ec4899 !important; }
+
+    .kpi-container .box-stats .kpi-content {
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: center !important;
+    }
+
+    .kpi-container .box-stats .title {
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        color: #64748b !important;
+        letter-spacing: 0.03em !important;
+        text-align: left !important;
+    }
+
+    .kpi-container .box-stats .value {
+        font-size: 20px !important;
+        font-weight: 800 !important;
+        color: #0f172a !important;
+        margin-top: 4px !important;
+        text-align: left !important;
+        line-height: 1.2 !important;
+    }
+
     /* Solid Obsidian Header Nav on mobile */
     #header {
         position: sticky !important;
@@ -558,19 +615,19 @@ body.ps_back-office {
         z-index: 1020 !important;
         background: #090d16 !important;
         height: auto !important;
-        min-height: 54px !important;
+        min-height: 52px !important;
         border-bottom: 1px solid #1e293b !important;
     }
 
     #header_infos {
         position: static !important;
         height: auto !important;
-        min-height: 54px !important;
+        min-height: 52px !important;
         background: #090d16 !important;
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        padding: 8px 12px !important;
+        padding: 6px 12px !important;
         width: 100% !important;
     }
 
@@ -587,20 +644,18 @@ body.ps_back-office {
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
-        background: rgba(255, 255, 255, 0.08) !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        background: transparent !important;
+        border: none !important;
         color: #ffffff !important;
-        border-radius: 8px !important;
-        padding: 7px 11px !important;
-        font-size: 15px !important;
+        padding: 6px 8px !important;
+        font-size: 18px !important;
         cursor: pointer !important;
         margin: 0 8px 0 0 !important;
+        box-shadow: none !important;
     }
 
-    #header_nav_toggle:hover,
-    #header_nav_toggle:active {
-        background: #1292ff !important;
-        border-color: #1292ff !important;
+    #header_nav_toggle i {
+        font-size: 20px !important;
         color: #ffffff !important;
     }
 
@@ -609,21 +664,19 @@ body.ps_back-office {
     }
 
     #header_shopname {
-        font-size: 14px !important;
+        font-size: 14.5px !important;
         color: #ffffff !important;
         font-weight: 700 !important;
-        max-width: 140px !important;
         white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
         padding: 0 !important;
-        margin: 0 !important;
+        margin: 0 8px 0 0 !important;
     }
 
     #header_foaccess {
-        padding: 5px 10px !important;
+        padding: 5px 12px !important;
         font-size: 11.5px !important;
-        margin-right: 4px !important;
+        margin-right: 6px !important;
+        border-radius: 9999px !important;
     }
 
     #header_notifs_icon_wrapper {
@@ -661,7 +714,8 @@ body.ps_back-office {
         font-size: 20px !important;
         font-weight: 800 !important;
         color: #0f172a !important;
-        margin-top: 4px !important;
+        margin-top: 2px !important;
+        margin-bottom: 8px !important;
     }
 
     .page-head .page-breadcrumb {
@@ -679,7 +733,7 @@ body.ps_back-office {
         display: flex !important;
         flex-direction: column !important;
         gap: 10px !important;
-        margin-bottom: 12px !important;
+        margin-bottom: 8px !important;
     }
 
     #calendar .btn-toolbar .btn-group.input-group {
@@ -692,19 +746,31 @@ body.ps_back-office {
         border: 1px solid #e2e8f0 !important;
         border-radius: 12px !important;
         padding: 3px !important;
-        gap: 4px !important;
+        gap: 3px !important;
+        scrollbar-width: none !important;
     }
 
     #calendar .btn-toolbar .btn-group.input-group::-webkit-scrollbar {
-        display: none;
+        display: none !important;
     }
 
     #calendar .btn-toolbar .btn-group.input-group .btn {
         flex: 1 0 auto !important;
-        padding: 6px 12px !important;
-        font-size: 12px !important;
+        padding: 6px 10px !important;
+        font-size: 11.5px !important;
+        font-weight: 600 !important;
+        color: #475569 !important;
         white-space: nowrap !important;
         border-radius: 8px !important;
+        border: none !important;
+        background: transparent !important;
+    }
+
+    #calendar .btn-toolbar .btn-group.input-group .btn.active {
+        background: #1292ff !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        box-shadow: 0 2px 6px rgba(18, 146, 255, 0.35) !important;
     }
 
     #calendar .btn-toolbar .form-group.input-group {
@@ -716,25 +782,60 @@ body.ps_back-office {
         justify-content: space-between !important;
         display: flex !important;
         align-items: center !important;
-        height: 40px !important;
+        height: 42px !important;
+        background: #ffffff !important;
+        border: 1.5px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 8px 14px !important;
+        font-size: 12.5px !important;
+        color: #334155 !important;
+    }
+
+    #datepickerExpand .datepicker-date-range {
+        display: inline-block !important;
+        font-size: 12px !important;
+    }
+
+    #datepickerExpand strong {
+        color: #0284c7 !important;
+        font-weight: 700 !important;
     }
 
     .stats-filter-hotel {
         width: 100% !important;
+        height: 42px !important;
+        border-radius: 12px !important;
+        border: 1.5px solid #e2e8f0 !important;
         margin-top: 8px !important;
+        font-size: 13px !important;
     }
 
-    /* Occupancy Widget Mobile Polish */
+    /* Luxury Occupancy Widget Mobile Polish */
     .avail-pie-label-container {
+        width: 100% !important;
+        margin: 0 !important;
         height: auto !important;
-        min-height: 72px !important;
-        padding: 8px 4px !important;
-        border-radius: 12px !important;
+        min-height: 76px !important;
+        padding: 10px 4px !important;
+        border-radius: 14px !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.06) !important;
-        margin: 2px !important;
+        text-align: center !important;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.08) !important;
+        border: none !important;
+    }
+
+    .col-md-4:nth-child(1) .avail-pie-label-container {
+        background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+    }
+
+    .col-md-4:nth-child(2) .avail-pie-label-container {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    }
+
+    .col-md-4:nth-child(3) .avail-pie-label-container {
+        background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%) !important;
     }
 
     .avail-pie-text {
@@ -743,7 +844,7 @@ body.ps_back-office {
         padding: 0 !important;
         margin: 0 0 4px 0 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.03em !important;
+        letter-spacing: 0.04em !important;
         color: rgba(255, 255, 255, 0.9) !important;
     }
 
@@ -753,7 +854,7 @@ body.ps_back-office {
     }
 
     .avail-pie-value {
-        font-size: 16px !important;
+        font-size: 16.5px !important;
         font-weight: 800 !important;
         line-height: 1.1 !important;
         padding: 0 !important;
@@ -833,6 +934,7 @@ body.ps_back-office {
         gap: 10px !important;
         padding-bottom: 8px !important;
         scrollbar-width: none !important;
+        margin: 0 0 10px 0 !important;
     }
 
     .kpi-container .kpis-wrap::-webkit-scrollbar {
@@ -840,9 +942,9 @@ body.ps_back-office {
     }
 
     .kpi-container .kpis-wrap .kpi-wrap {
-        flex: 0 0 140px !important;
-        width: 140px !important;
-        min-width: 140px !important;
+        flex: 0 0 145px !important;
+        width: 145px !important;
+        min-width: 145px !important;
         padding: 0 !important;
     }
 }
