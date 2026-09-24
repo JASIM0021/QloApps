@@ -25,7 +25,7 @@
 <div id="login-panel">
 	<div id="login-header">
 		<h1 class="text-center">
-			<img id="logo" src="{$img_dir}qloapps@2x.png" style="max-width: 220px; height: auto;" alt="TodayInTech Hotel" />
+			<img id="logo" src="{$img_dir}qloapps@2x.png?v={$smarty.now}" style="max-width: 220px; height: auto;" alt="TodayInTech Hotel" />
 		</h1>
 		<div class="text-center" style="color: #64748b; font-size: 0.85rem; margin-top: 4px;">Hotel Property Management System</div>
 		<div id="error" class="hide alert alert-danger">
@@ -49,7 +49,7 @@
 		<div class="alert alert-warning">{$warningSslMessage}</div>
 		{/if}
 	</div>
-	<div id="shop-img"><img src="{$img_dir}qloapps-login@2x.png" alt="{$shop_name}" width="136px" height="136px" /></div>
+	<div id="shop-img"><img src="{$img_dir}qloapps-login@2x.png?v={$smarty.now}" alt="{$shop_name}" width="136px" height="136px" /></div>
 	<div class="flip-container">
 		<div class="flipper">
 			<div class="front panel">

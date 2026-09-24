@@ -50,14 +50,14 @@
 					{/foreach}
 					<![endif]-->
 				{else}
-					<link rel="stylesheet" href="{$css_uri|escape:'html':'UTF-8'}" type="text/css" media="{$media|escape:'html':'UTF-8'}" />
+					<link rel="stylesheet" href="{$css_uri|escape:'html':'UTF-8'}{if strpos($css_uri, '?') !== false}&v={$smarty.now}{else}?v={$smarty.now}{/if}" type="text/css" media="{$media|escape:'html':'UTF-8'}" />
 				{/if}
 			{/foreach}
 		{/if}
 		{if (isset($js_def) && count($js_def) || isset($js_files) && count($js_files))}
 			{include file=$smarty.const._PS_ALL_THEMES_DIR_|cat:"javascript.tpl"}
 		{/if}
-		<script type="text/javascript" src="../js/admin/login.js?v={$smarty.const._PS_VERSION_|escape:'html':'UTF-8'}"></script>
+		<script type="text/javascript" src="../js/admin/login.js?v={$smarty.now}"></script>
 
 	</head>
 	<body class="ps_back-office bootstrap">

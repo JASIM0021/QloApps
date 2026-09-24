@@ -84,7 +84,7 @@ $(document).ready(function() {
 	});
 
 	//Preload images
-	$('<img/>')[0].src = img_dir+'qloapps-login@2x.png';
+	$('<img/>')[0].src = img_dir+'qloapps-login@2x.png?v='+new Date().getTime();
 });
 
 //todo: ladda init
