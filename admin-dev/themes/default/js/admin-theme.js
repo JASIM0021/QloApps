@@ -211,65 +211,14 @@ $(document).ready(function() {
 	}
 
 	//set main navigation for mobile devices
+	//set main navigation for mobile devices - legacy disabled in favor of modern off-canvas drawer
 	function mobileNav() {
-		navTopbarReset();
-		// clean actual menu type
-		// get it in navigation whatever type it is
-		var navigation = $('#nav-sidebar,#nav-topbar');
-		navigation.find('.menu').hide();
-		var submenu = "";
-		// clean trigger
-		navigation.off().attr('id','nav-mobile');
-		$('span.menu-collapse').off();
-		navigation.on('click.collapse','span.menu-collapse',function(){
-			if ($(this).hasClass('expanded')){
-				$(this).html('<i class="icon-align-justify"></i>');
-				navigation.find('ul.menu').hide();
-				navigation.removeClass('expanded');
-				$(this).removeClass('expanded');
-				//remove submenu when closing nav
-				$('#nav-mobile-submenu').remove();
-			}
-			else {
-				$(this).html('<i class="icon-remove"></i>');
-				navigation.find('ul.menu').removeClass('menu-close').show();
-				navigation.addClass('expanded');
-				$(this).addClass('expanded');
-			}
-		});
-		//get click for item which has submenu
-		navigation.on('click.submenu','.maintab.has_submenu a.title', function(e){
-			e.preventDefault();
-			navigation.find('.menu').addClass('menu-close');
-			$('#nav-mobile-submenu').remove();
-			//create submenu
-			submenu = $('<ul id="nav-mobile-submenu" class="menu"><li><a href="#" id="nav-mobile-submenu-back"><i class="icon-arrow-left"></i>'+ $(this).html() +'</a></li></ul>');
-			submenu.append($(this).closest('.maintab').find('.submenu').html());
-			//show submenu
-			navigation.append(submenu);
-			submenu.show();
-		});
-		navigation.on('click.back','#nav-mobile-submenu-back',function(e){
-			e.preventDefault();
-			submenu.remove();
-			navigation.find('.menu').removeClass('menu-close').show();
-		});
+		// Handled via modern responsive off-canvas drawer
 	}
 
 	//unset mobile nav
 	function removeMobileNav(){
-		var navigation = $('#nav-mobile');
-		$('#nav-mobile-submenu').remove();
-		$('span.menu-collapse').html('<i class="icon-align-justify"></i>');
-		navigation.off();
-		if ($('body').hasClass('page-sidebar')){
-			navigation.attr('id',"nav-sidebar");
-			navSidebar();
-		} else if ($('body').hasClass('page-topbar')){
-			navigation.attr('id',"nav-topbar");
-			navTopbar();
-		}
-		navigation.find('.menu').show();
+		// Handled via modern responsive off-canvas drawer
 	}
 
 	//init main navigation
@@ -353,25 +302,6 @@ $(document).ready(function() {
 		},
 		unmatch : function() {
 
-		}
-	});
-	enquire.register('screen and (max-width: 768px)', {
-		match : function() {
-
-			$('body.page-sidebar').addClass('page-sidebar-closed');
-		},
-		unmatch : function() {
-			$('body.page-sidebar').removeClass('page-sidebar-closed');
-		}
-	});
-	enquire.register('screen and (max-width: 480px)', {
-		match : function() {
-			$('body').addClass('mobile-nav');
-			mobileNav();
-		},
-		unmatch : function() {
-			$('body').removeClass('mobile-nav');
-			removeMobileNav();
 		}
 	});
 

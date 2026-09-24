@@ -364,21 +364,32 @@
 
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$('#header_nav_toggle').on('click', function(e) {
+				// Handle hamburger toggle
+				$(document).on('click', '#header_nav_toggle', function(e) {
 					e.preventDefault();
 					e.stopPropagation();
 					$('body').toggleClass('mobile-sidebar-open');
 				});
 
-				$('#mobile-sidebar-backdrop').on('click', function() {
+				// Handle backdrop click
+				$(document).on('click', '#mobile-sidebar-backdrop', function() {
 					$('body').removeClass('mobile-sidebar-open');
 				});
 
-				$('#nav-sidebar .menu a').on('click', function() {
+				// Handle submenu accordion on mobile
+				$(document).on('click', '#nav-sidebar .maintab.has_submenu > a.title', function(e) {
 					if ($(window).width() < 992) {
-						if (!$(this).parent().hasClass('has_submenu') || $(this).parent().hasClass('hover')) {
-							$('body').removeClass('mobile-sidebar-open');
-						}
+						e.preventDefault();
+						var $parent = $(this).parent('.maintab');
+						$parent.toggleClass('mobile-submenu-open');
+						$parent.find('> ul.submenu').slideToggle(200);
+					}
+				});
+
+				// Close drawer on final link click
+				$(document).on('click', '#nav-sidebar ul.submenu a, #nav-sidebar .maintab:not(.has_submenu) > a', function() {
+					if ($(window).width() < 992) {
+						$('body').removeClass('mobile-sidebar-open');
 					}
 				});
 			});

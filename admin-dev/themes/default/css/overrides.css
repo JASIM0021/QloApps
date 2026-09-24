@@ -494,6 +494,9 @@ body.ps_back-office {
     }
 
     /* Off-canvas sidebar */
+    body.ps_back-office #nav-sidebar,
+    div.bootstrap > nav#nav-sidebar,
+    nav#nav-sidebar,
     #nav-sidebar {
         position: fixed !important;
         top: 0 !important;
@@ -507,7 +510,9 @@ body.ps_back-office {
         transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
+        background: #0b1329 !important;
         box-shadow: none !important;
+        margin: 0 !important;
     }
 
     /* When mobile sidebar is open */
@@ -515,6 +520,8 @@ body.ps_back-office {
         overflow: hidden !important;
     }
 
+    body.ps_back-office.mobile-sidebar-open #nav-sidebar,
+    body.mobile-sidebar-open div.bootstrap > nav#nav-sidebar,
     body.mobile-sidebar-open #nav-sidebar {
         transform: translateX(0) !important;
         box-shadow: 10px 0 35px rgba(0, 0, 0, 0.6) !important;
@@ -525,7 +532,24 @@ body.ps_back-office {
         opacity: 1 !important;
     }
 
+    /* Hide legacy menu-collapse floating elements */
+    span.menu-collapse,
+    .menu-collapse,
+    #nav-sidebar .menu-collapse,
+    #nav-mobile {
+        display: none !important;
+    }
+
     /* Always show menu titles & icons in mobile drawer */
+    #nav-sidebar ul.menu {
+        display: block !important;
+        margin-top: 8px !important;
+    }
+
+    #nav-sidebar ul.menu > li.maintab {
+        display: block !important;
+    }
+
     #nav-sidebar ul.menu > li.maintab > a.title {
         display: flex !important;
         align-items: center !important;
@@ -545,10 +569,6 @@ body.ps_back-office {
         min-width: 32px !important;
         width: 32px !important;
         height: 32px !important;
-    }
-
-    #nav-sidebar .menu-collapse {
-        display: none !important;
     }
 
     /* --------------------------------------------------------------------------
