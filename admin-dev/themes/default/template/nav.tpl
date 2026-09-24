@@ -1,3 +1,4 @@
+<div id="mobile-sidebar-backdrop"></div>
 <div class="bootstrap">
 	<nav id="{if $employee->bo_menu}nav-sidebar{else}nav-topbar{/if}" role="navigation">
 		{if !$tab}
@@ -31,9 +32,6 @@
 				{/if}
 			{/foreach}
 		</ul>
-		<span class="menu-collapse">
-			<i class="icon-align-justify icon-rotate-90"></i>
-		</span>
 		{hook h='displayAdminNavBarBeforeEnd'}
 	</nav>
 </div>

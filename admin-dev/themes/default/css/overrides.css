@@ -470,19 +470,24 @@ body.ps_back-office {
     background: rgba(11, 19, 41, 0.7);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    z-index: 99998;
+    z-index: 99998 !important;
     opacity: 0;
     transition: opacity 0.25s ease;
 }
 
 @media (max-width: 991px) {
-    /* Main Layout full width */
+    /* Main Layout full width & prevent stacking trap */
     body.ps_back-office #main,
     body.ps_back-office.page-sidebar #main,
     body.ps_back-office.page-sidebar-closed #main {
+        position: static !important;
         margin-left: 0 !important;
         padding-left: 0 !important;
         width: 100% !important;
+    }
+
+    #main > .bootstrap {
+        position: static !important;
     }
 
     body.ps_back-office #content,
@@ -513,6 +518,8 @@ body.ps_back-office {
         background: #0b1329 !important;
         box-shadow: none !important;
         margin: 0 !important;
+        display: block !important;
+        visibility: visible !important;
     }
 
     /* When mobile sidebar is open */
@@ -524,7 +531,9 @@ body.ps_back-office {
     body.mobile-sidebar-open div.bootstrap > nav#nav-sidebar,
     body.mobile-sidebar-open #nav-sidebar {
         transform: translateX(0) !important;
-        box-shadow: 10px 0 35px rgba(0, 0, 0, 0.6) !important;
+        box-shadow: 10px 0 40px rgba(0, 0, 0, 0.7) !important;
+        display: block !important;
+        visibility: visible !important;
     }
 
     body.mobile-sidebar-open #mobile-sidebar-backdrop {
