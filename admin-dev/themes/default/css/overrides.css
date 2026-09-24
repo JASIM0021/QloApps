@@ -739,27 +739,110 @@ body.ps_back-office {
 
     .avail-pie-text {
         font-size: 11px !important;
-        font-weight: 600 !important;
-        padding-top: 0 !important;
+        font-weight: 700 !important;
+        padding: 0 !important;
+        margin: 0 0 4px 0 !important;
         text-transform: uppercase !important;
         letter-spacing: 0.03em !important;
+        color: rgba(255, 255, 255, 0.9) !important;
     }
 
     .avail-pie-value-container {
         position: static !important;
-        margin-top: 4px !important;
+        margin: 0 !important;
     }
 
     .avail-pie-value {
-        font-size: 15px !important;
+        font-size: 16px !important;
         font-weight: 800 !important;
         line-height: 1.1 !important;
-        word-break: break-word !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        color: #ffffff !important;
+        word-break: break-all !important;
     }
 
     .avil-chart-head {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 6px !important;
         height: auto !important;
-        padding-top: 10px !important;
-        margin-bottom: 10px !important;
+        padding: 6px 0 !important;
+        margin-bottom: 8px !important;
+    }
+
+    .avil-chart-head > div {
+        flex: 1 1 0 !important;
+        max-width: 33.33% !important;
+        padding: 0 !important;
+    }
+
+    .avil-chart-head > div .row {
+        margin: 0 !important;
+    }
+
+    /* Operations Today (Guest Cycle Tabs) Mobile Horizontal Strip */
+    #dashguestcycle .nav-tabs {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        gap: 6px !important;
+        padding: 6px !important;
+        scrollbar-width: none !important;
+    }
+
+    #dashguestcycle .nav-tabs::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    #dashguestcycle .nav-tabs > li {
+        flex: 0 0 auto !important;
+        float: none !important;
+    }
+
+    #dashguestcycle .nav-tabs > li > a {
+        white-space: nowrap !important;
+        padding: 8px 14px !important;
+        font-size: 13px !important;
+        border-radius: 10px !important;
+        border: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        background: #f8fafc !important;
+    }
+
+    #dashguestcycle .nav-tabs > li.active > a {
+        background: #1292ff !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+    }
+
+    #dashguestcycle .nav-tabs > li.active > a .label-info {
+        background: #ffffff !important;
+        color: #1292ff !important;
+    }
+
+    /* KPI metric cards horizontal scroll on mobile */
+    .kpi-container .kpis-wrap {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        gap: 10px !important;
+        padding-bottom: 8px !important;
+        scrollbar-width: none !important;
+    }
+
+    .kpi-container .kpis-wrap::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .kpi-container .kpis-wrap .kpi-wrap {
+        flex: 0 0 140px !important;
+        width: 140px !important;
+        min-width: 140px !important;
+        padding: 0 !important;
     }
 }
