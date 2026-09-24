@@ -110,7 +110,159 @@
 		</style>
 	-->
 	{/if}
-	<link rel="stylesheet" href="{$base_dir_ssl}admin-dev/themes/default/css/overrides.css?v={$smarty.now}" type="text/css" media="all" />
+	<link rel="stylesheet" href="{$smarty.const.__PS_BASE_URI__}admin-dev/themes/default/css/overrides.css?v={$smarty.now}" type="text/css" media="all" />
+	<style type="text/css">
+		@media (max-width: 991px) {
+			#mobile-sidebar-backdrop {
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(11, 19, 41, 0.75);
+				backdrop-filter: blur(4px);
+				-webkit-backdrop-filter: blur(4px);
+				z-index: 99998 !important;
+				opacity: 0;
+				transition: opacity 0.25s ease;
+			}
+			body.mobile-sidebar-open #mobile-sidebar-backdrop {
+				display: block !important;
+				opacity: 1 !important;
+			}
+			#nav-sidebar,
+			nav#nav-sidebar,
+			body.ps_back-office #nav-sidebar,
+			body.page-sidebar-closed #nav-sidebar {
+				position: fixed !important;
+				top: 0 !important;
+				left: -290px !important;
+				bottom: 0 !important;
+				width: 280px !important;
+				max-width: 85vw !important;
+				height: 100vh !important;
+				z-index: 99999 !important;
+				background: #0b1329 !important;
+				box-shadow: none !important;
+				margin: 0 !important;
+				display: block !important;
+				visibility: visible !important;
+				overflow-y: auto !important;
+				-webkit-overflow-scrolling: touch !important;
+				transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+				transform: none !important;
+			}
+			body.mobile-sidebar-open #nav-sidebar,
+			body.mobile-sidebar-open nav#nav-sidebar,
+			body.mobile-sidebar-open.page-sidebar-closed #nav-sidebar,
+			body.mobile-sidebar-open.ps_back-office #nav-sidebar {
+				left: 0 !important;
+				transform: none !important;
+				box-shadow: 10px 0 40px rgba(0, 0, 0, 0.7) !important;
+				display: block !important;
+				visibility: visible !important;
+			}
+			.mobile-nav-header {
+				display: flex !important;
+				align-items: center !important;
+				justify-content: space-between !important;
+				padding: 16px 18px !important;
+				background: #080e1e !important;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+			}
+			.mobile-nav-brand {
+				display: flex !important;
+				align-items: center !important;
+				gap: 10px !important;
+				color: #ffffff !important;
+				font-size: 15px !important;
+				font-weight: 700 !important;
+			}
+			.mobile-nav-brand i {
+				color: #38bdf8 !important;
+				font-size: 18px !important;
+			}
+			.mobile-nav-close {
+				background: rgba(255, 255, 255, 0.06) !important;
+				border: 1px solid rgba(255, 255, 255, 0.1) !important;
+				border-radius: 8px !important;
+				color: #94a3b8 !important;
+				width: 34px !important;
+				height: 34px !important;
+				display: inline-flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+				cursor: pointer !important;
+			}
+			#nav-sidebar ul.menu {
+				display: block !important;
+				margin: 0 !important;
+				padding: 8px 0 !important;
+				list-style: none !important;
+			}
+			#nav-sidebar ul.menu > li.maintab,
+			body.page-sidebar-closed #nav-sidebar ul.menu > li.maintab {
+				display: block !important;
+				width: 100% !important;
+				margin: 0 !important;
+			}
+			#nav-sidebar ul.menu > li.maintab > a.title,
+			body.page-sidebar-closed #nav-sidebar ul.menu > li.maintab > a.title {
+				display: flex !important;
+				align-items: center !important;
+				padding: 12px 16px !important;
+				background: transparent !important;
+				color: #cbd5e1 !important;
+				text-align: left !important;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+				font-size: 13.5px !important;
+				text-decoration: none !important;
+			}
+			#nav-sidebar ul.menu > li.maintab > a.title span,
+			body.page-sidebar-closed #nav-sidebar ul.menu > li.maintab > a.title span {
+				display: inline-block !important;
+				opacity: 1 !important;
+				visibility: visible !important;
+				color: #cbd5e1 !important;
+				font-size: 13.5px !important;
+			}
+			#nav-sidebar ul.menu > li.maintab > a.title i,
+			body.page-sidebar-closed #nav-sidebar ul.menu > li.maintab > a.title i {
+				display: inline-flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+				margin-right: 12px !important;
+				width: 24px !important;
+				font-size: 16px !important;
+				color: #38bdf8 !important;
+			}
+			#nav-sidebar ul.menu > li.maintab ul.submenu,
+			body.page-sidebar-closed #nav-sidebar ul.menu > li.maintab ul.submenu {
+				position: static !important;
+				display: none;
+				width: 100% !important;
+				background: rgba(0, 0, 0, 0.25) !important;
+				padding: 4px 0 6px 36px !important;
+				border: none !important;
+				box-shadow: none !important;
+			}
+			#nav-sidebar ul.menu > li.maintab.mobile-submenu-open > ul.submenu {
+				display: block !important;
+			}
+			#nav-sidebar ul.menu > li.maintab ul.submenu li a {
+				display: block !important;
+				padding: 8px 12px !important;
+				color: #94a3b8 !important;
+				font-size: 13px !important;
+				text-decoration: none !important;
+			}
+			#nav-sidebar ul.menu > li.maintab ul.submenu li a:hover,
+			#nav-sidebar ul.menu > li.maintab ul.submenu li.active a {
+				color: #38bdf8 !important;
+			}
+		}
+	</style>
 </head>
 
 {if $display_header}
