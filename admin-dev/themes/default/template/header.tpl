@@ -107,6 +107,9 @@
 		// @todo: multishop color
 		<style type="text/css">
 			div#header_infos, div#header_infos a#header_shopname, div#header_infos a#header_logout, div#header_infos a#header_foaccess {ldelim}color:{$brightness}{rdelim}
+		</style>
+	-->
+	{/if}
 	<link rel="stylesheet" href="{$base_dir_ssl}admin-dev/themes/default/css/overrides.css?v={$smarty.now}" type="text/css" media="all" />
 </head>
 
