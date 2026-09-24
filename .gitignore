@@ -16,6 +16,9 @@ nbproject
 bower_components
 composer.lock
 
+# Node / Tailwind
+node_modules/
+
 # Cache, temp and personal files
 
 /cache/**

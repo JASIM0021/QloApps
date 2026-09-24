@@ -1,0 +1,29 @@
+{
+  "name": "qloapps",
+  "version": "1.0.0",
+  "description": "<div align=\"center\"> \t<a href=\"https://www.qloapps.com\"><img src=\"https://forums.qloapps.com/assets/uploads/system/site-logo.png?v=hkl8e1230fo\" alt=\"QloApps\"></a> \t<br> \t<p> \t\t<b>QloApps - An open source and free platform to launch your own hotel booking website</b> \t</p> </div>",
+  "main": "tailwind.config.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "build:css": "tailwindcss -i ./admin-dev/themes/default/css/tailwind-input.css -o ./admin-dev/themes/default/css/tailwind.min.css --minify",
+    "watch:css": "tailwindcss -i ./admin-dev/themes/default/css/tailwind-input.css -o ./admin-dev/themes/default/css/tailwind.min.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qloapps/QloApps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Qloapps/QloApps/issues"
+  },
+  "homepage": "https://github.com/Qloapps/QloApps#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
