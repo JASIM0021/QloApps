@@ -467,7 +467,7 @@ body.ps_back-office {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(11, 19, 41, 0.7);
+    background: rgba(11, 19, 41, 0.75);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     z-index: 99998 !important;
@@ -500,19 +500,20 @@ body.ps_back-office {
 
     /* Off-canvas sidebar */
     body.ps_back-office #nav-sidebar,
+    body.ps_back-office.page-sidebar-closed #nav-sidebar,
     div.bootstrap > nav#nav-sidebar,
     nav#nav-sidebar,
     #nav-sidebar {
         position: fixed !important;
         top: 0 !important;
-        left: 0 !important;
+        left: -290px !important;
         bottom: 0 !important;
         width: 280px !important;
         max-width: 85vw !important;
         height: 100vh !important;
         z-index: 99999 !important;
-        transform: translateX(-100%) !important;
-        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        transform: none !important;
+        transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
         background: #0b1329 !important;
@@ -528,9 +529,11 @@ body.ps_back-office {
     }
 
     body.ps_back-office.mobile-sidebar-open #nav-sidebar,
+    body.ps_back-office.page-sidebar-closed.mobile-sidebar-open #nav-sidebar,
     body.mobile-sidebar-open div.bootstrap > nav#nav-sidebar,
     body.mobile-sidebar-open #nav-sidebar {
-        transform: translateX(0) !important;
+        left: 0 !important;
+        transform: none !important;
         box-shadow: 10px 0 40px rgba(0, 0, 0, 0.7) !important;
         display: block !important;
         visibility: visible !important;
@@ -539,6 +542,51 @@ body.ps_back-office {
     body.mobile-sidebar-open #mobile-sidebar-backdrop {
         display: block !important;
         opacity: 1 !important;
+    }
+
+    /* Mobile Drawer Header */
+    .mobile-nav-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 16px 18px !important;
+        background: #080e1e !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .mobile-nav-brand {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        color: #ffffff !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.01em !important;
+    }
+
+    .mobile-nav-brand i {
+        color: #38bdf8 !important;
+        font-size: 18px !important;
+    }
+
+    .mobile-nav-close {
+        background: rgba(255, 255, 255, 0.06) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 8px !important;
+        color: #94a3b8 !important;
+        width: 34px !important;
+        height: 34px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+    }
+
+    .mobile-nav-close:hover,
+    .mobile-nav-close:active {
+        background: rgba(255, 255, 255, 0.15) !important;
+        color: #ffffff !important;
     }
 
     /* Hide legacy menu-collapse floating elements */
@@ -553,31 +601,76 @@ body.ps_back-office {
     #nav-sidebar ul.menu {
         display: block !important;
         margin-top: 8px !important;
+        padding: 0 !important;
+        list-style: none !important;
     }
 
-    #nav-sidebar ul.menu > li.maintab {
+    #nav-sidebar ul.menu > li.maintab,
+    body.page-sidebar-closed #nav-sidebar ul.menu > li.maintab {
         display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
     }
 
-    #nav-sidebar ul.menu > li.maintab > a.title {
+    #nav-sidebar ul.menu > li.maintab > a.title,
+    body.page-sidebar-closed #nav-sidebar ul.menu > li.maintab > a.title {
         display: flex !important;
         align-items: center !important;
-        padding: 10px 14px !important;
+        padding: 12px 16px !important;
+        text-align: left !important;
+        background: transparent !important;
+        color: #cbd5e1 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
     }
 
-    #nav-sidebar ul.menu > li.maintab > a.title span {
+    #nav-sidebar ul.menu > li.maintab > a.title span,
+    body.page-sidebar-closed #nav-sidebar ul.menu > li.maintab > a.title span {
         display: inline-block !important;
         font-size: 13.5px !important;
         opacity: 1 !important;
         visibility: visible !important;
+        color: #cbd5e1 !important;
     }
 
-    #nav-sidebar ul.menu > li.maintab > a.title i {
+    #nav-sidebar ul.menu > li.maintab > a.title i,
+    body.page-sidebar-closed #nav-sidebar ul.menu > li.maintab > a.title i {
         display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         margin-right: 12px !important;
-        min-width: 32px !important;
-        width: 32px !important;
-        height: 32px !important;
+        min-width: 28px !important;
+        width: 28px !important;
+        height: 28px !important;
+        color: #38bdf8 !important;
+    }
+
+    /* Submenus on mobile */
+    #nav-sidebar ul.menu > li.maintab ul.submenu,
+    body.page-sidebar-closed #nav-sidebar ul.menu > li.maintab ul.submenu {
+        position: static !important;
+        display: none;
+        width: 100% !important;
+        background: rgba(0, 0, 0, 0.25) !important;
+        padding: 4px 0 6px 40px !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    #nav-sidebar ul.menu > li.maintab.mobile-submenu-open > ul.submenu {
+        display: block !important;
+    }
+
+    #nav-sidebar ul.menu > li.maintab ul.submenu li a {
+        display: block !important;
+        padding: 8px 12px !important;
+        color: #94a3b8 !important;
+        font-size: 13px !important;
+        background: transparent !important;
+    }
+
+    #nav-sidebar ul.menu > li.maintab ul.submenu li a:hover,
+    #nav-sidebar ul.menu > li.maintab ul.submenu li.active a {
+        color: #ffffff !important;
     }
 
     /* --------------------------------------------------------------------------

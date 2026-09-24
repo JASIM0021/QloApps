@@ -107,13 +107,12 @@
 		// @todo: multishop color
 		<style type="text/css">
 			div#header_infos, div#header_infos a#header_shopname, div#header_infos a#header_logout, div#header_infos a#header_foaccess {ldelim}color:{$brightness}{rdelim}
-		</style>
-	-->
-	{/if}
+	<link rel="stylesheet" href="{$base_dir_ssl}admin-dev/themes/default/css/overrides.css?v={$smarty.now}" type="text/css" media="all" />
 </head>
 
 {if $display_header}
 	<body class="ps_back-office{if $employee->bo_menu} page-sidebar{if $collapse_menu} page-sidebar-closed{/if}{else} page-topbar{/if} {$smarty.get.controller|escape|strtolower}">
+	{include file='nav.tpl'}
 	{* begin  HEADER *}
 	<header id="header" class="bootstrap">
 		<nav id="header_infos" role="navigation">
@@ -349,8 +348,6 @@
 	</header>
 
 	<div id="main">
-		{include file='nav.tpl'}
-
 		<div id="content" class="{if !$bootstrap}nobootstrap{else}bootstrap{/if}">
 			{if isset($page_header_toolbar)}{$page_header_toolbar}{/if}
 			{if isset($modal_module_list)}{$modal_module_list}{/if}
@@ -370,8 +367,9 @@
 					$('body').toggleClass('mobile-sidebar-open');
 				});
 
-				// Handle backdrop click
-				$(document).on('click', '#mobile-sidebar-backdrop', function() {
+				// Handle backdrop and close button click
+				$(document).on('click', '#mobile-sidebar-backdrop, #mobile_nav_close_btn', function(e) {
+					e.preventDefault();
 					$('body').removeClass('mobile-sidebar-open');
 				});
 
